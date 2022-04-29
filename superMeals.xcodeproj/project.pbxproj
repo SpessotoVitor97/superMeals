@@ -63,20 +63,60 @@
 		2D004FA8281CAB3A009F29E7 /* superMeals */ = {
 			isa = PBXGroup;
 			children = (
+				2D004FC5281CAD65009F29E7 /* AppInfra */,
+				2D004FC8281CADE3009F29E7 /* Features */,
+				2D004FC9281CADEB009F29E7 /* DataBase */,
+			);
+			path = superMeals;
+			sourceTree = "<group>";
+		};
+		2D004FC5281CAD65009F29E7 /* AppInfra */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FBE281CAB3D009F29E7 /* main.m */,
+				2D004FB2281CAB3A009F29E7 /* Main.storyboard */,
+				2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */,
+				2D004FC7281CADB9009F29E7 /* Delegates */,
+				2D004FC6281CADA7009F29E7 /* SupportingFiles */,
+			);
+			path = AppInfra;
+			sourceTree = "<group>";
+		};
+		2D004FC6281CADA7009F29E7 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FB8281CAB3D009F29E7 /* Assets.xcassets */,
+				2D004FBD281CAB3D009F29E7 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		2D004FC7281CADB9009F29E7 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
 				2D004FA9281CAB3A009F29E7 /* AppDelegate.h */,
 				2D004FAA281CAB3A009F29E7 /* AppDelegate.m */,
 				2D004FAC281CAB3A009F29E7 /* SceneDelegate.h */,
 				2D004FAD281CAB3A009F29E7 /* SceneDelegate.m */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		2D004FC8281CADE3009F29E7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
 				2D004FAF281CAB3A009F29E7 /* ViewController.h */,
 				2D004FB0281CAB3A009F29E7 /* ViewController.m */,
-				2D004FB2281CAB3A009F29E7 /* Main.storyboard */,
-				2D004FB8281CAB3D009F29E7 /* Assets.xcassets */,
-				2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */,
-				2D004FBD281CAB3D009F29E7 /* Info.plist */,
-				2D004FBE281CAB3D009F29E7 /* main.m */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		2D004FC9281CADEB009F29E7 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
 				2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */,
 			);
-			path = superMeals;
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,12 +338,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69KP7AWB28;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = superMeals/Info.plist;
+				INFOPLIST_FILE = superMeals/AppInfra/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,12 +367,14 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69KP7AWB28;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = superMeals/Info.plist;
+				INFOPLIST_FILE = superMeals/AppInfra/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
