@@ -15,13 +15,14 @@
 		2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FB8281CAB3D009F29E7 /* Assets.xcassets */; };
 		2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */; };
 		2D004FBF281CAB3D009F29E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FBE281CAB3D009F29E7 /* main.m */; };
-		2D004FE1281DCEF3009F29E7 /* AFNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 2D004FE0281DCEF3009F29E7 /* AFNetworking */; };
 		2D004FF9281DDF8D009F29E7 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FF2281DDF8C009F29E7 /* APIResponse.m */; };
 		2D004FFA281DDF8D009F29E7 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FF3281DDF8C009F29E7 /* APIClient.m */; };
 		2D004FFB281DDF8D009F29E7 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FF5281DDF8C009F29E7 /* APIRequest.m */; };
 		2D004FFC281DDF8D009F29E7 /* HTTPMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FF6281DDF8C009F29E7 /* HTTPMethod.m */; };
 		2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FFE282002A9009F29E7 /* SMRecepies.m */; };
 		2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */; };
+		2DF9FE242820B47F0012C3C7 /* RecepiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DF9FE232820B47F0012C3C7 /* RecepiesViewController.xib */; };
+		2DF9FE282820B4D70012C3C7 /* RecepiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DF9FE272820B4D70012C3C7 /* RecepiesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,9 @@
 		2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepiesViewModel.m; sourceTree = "<group>"; };
 		2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModel.h; sourceTree = "<group>"; };
 		2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModelDelegate.h; sourceTree = "<group>"; };
+		2DF9FE232820B47F0012C3C7 /* RecepiesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecepiesViewController.xib; sourceTree = "<group>"; };
+		2DF9FE262820B4D70012C3C7 /* RecepiesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecepiesViewController.h; sourceTree = "<group>"; };
+		2DF9FE272820B4D70012C3C7 /* RecepiesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecepiesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D004FE1281DCEF3009F29E7 /* AFNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +157,7 @@
 		2D004FDE281DCCD7009F29E7 /* Recepies */ = {
 			isa = PBXGroup;
 			children = (
+				2DF9FE252820B48C0012C3C7 /* View */,
 				2D005000282002AF009F29E7 /* Model */,
 				2D005004282017D4009F29E7 /* ViewModel */,
 				2D005005282017DF009F29E7 /* Controller */,
@@ -241,6 +245,16 @@
 			path = APIMehtod;
 			sourceTree = "<group>";
 		};
+		2DF9FE252820B48C0012C3C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2DF9FE232820B47F0012C3C7 /* RecepiesViewController.xib */,
+				2DF9FE262820B4D70012C3C7 /* RecepiesViewController.h */,
+				2DF9FE272820B4D70012C3C7 /* RecepiesViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,7 +272,6 @@
 			);
 			name = superMeals;
 			packageProductDependencies = (
-				2D004FE0281DCEF3009F29E7 /* AFNetworking */,
 			);
 			productName = superMeals;
 			productReference = 2D004FA6281CAB3A009F29E7 /* superMeals.app */;
@@ -288,7 +301,6 @@
 			);
 			mainGroup = 2D004F9D281CAB39009F29E7;
 			packageReferences = (
-				2D004FDF281DCEF2009F29E7 /* XCRemoteSwiftPackageReference "AFNetworking" */,
 			);
 			productRefGroup = 2D004FA7281CAB3A009F29E7 /* Products */;
 			projectDirPath = "";
@@ -304,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DF9FE242820B47F0012C3C7 /* RecepiesViewController.xib in Resources */,
 				2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */,
 				2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */,
 				2D004FB4281CAB3A009F29E7 /* Main.storyboard in Resources */,
@@ -328,6 +341,7 @@
 				2D004FB1281CAB3A009F29E7 /* ViewController.m in Sources */,
 				2D004FAB281CAB3A009F29E7 /* AppDelegate.m in Sources */,
 				2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */,
+				2DF9FE282820B4D70012C3C7 /* RecepiesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,25 +557,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		2D004FDF281DCEF2009F29E7 /* XCRemoteSwiftPackageReference "AFNetworking" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AFNetworking/AFNetworking.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		2D004FE0281DCEF3009F29E7 /* AFNetworking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2D004FDF281DCEF2009F29E7 /* XCRemoteSwiftPackageReference "AFNetworking" */;
-			productName = AFNetworking;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */ = {

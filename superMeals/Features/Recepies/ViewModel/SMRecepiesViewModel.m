@@ -23,14 +23,25 @@
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:
       ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        NSString *myRecepies = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSLog(@"Data received: %@", myRecepies);
-        NSLog(@"Response received: %@", response);
-        NSLog(@"error received: %@", error);
+        if (error) {
+            NSString *strError = error.localizedDescription;
+            NSLog(@"error received: %@", strError);
+            [self->_delegate onError:error];
+        }
         
-        NSError *parseError;
-        self.recepies = [SMRecepies fromJSON:myRecepies encoding:NSUTF8StringEncoding error:&parseError];
-        [self->_delegate onSuccess:self->_recepies];
+        if (response) {
+            NSString *strResponse = response.description;
+            NSLog(@"Response received: %@", strResponse);
+        }
+        
+        if (data) {
+            NSString *myRecepies = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"Data received: %@", myRecepies);
+            
+            NSError *parseError;
+            self.recepies = [SMRecepies fromJSON:myRecepies encoding:NSUTF8StringEncoding error:&parseError];
+            [self->_delegate onSuccess:self->_recepies];
+        }
     }] resume];
 }
 
