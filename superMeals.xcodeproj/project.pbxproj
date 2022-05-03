@@ -15,6 +15,13 @@
 		2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FB8281CAB3D009F29E7 /* Assets.xcassets */; };
 		2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */; };
 		2D004FBF281CAB3D009F29E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FBE281CAB3D009F29E7 /* main.m */; };
+		2D004FE1281DCEF3009F29E7 /* AFNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = 2D004FE0281DCEF3009F29E7 /* AFNetworking */; };
+		2D004FF9281DDF8D009F29E7 /* APIResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FF2281DDF8C009F29E7 /* APIResponse.m */; };
+		2D004FFA281DDF8D009F29E7 /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FF3281DDF8C009F29E7 /* APIClient.m */; };
+		2D004FFB281DDF8D009F29E7 /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FF5281DDF8C009F29E7 /* APIRequest.m */; };
+		2D004FFC281DDF8D009F29E7 /* HTTPMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FF6281DDF8C009F29E7 /* HTTPMethod.m */; };
+		2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FFE282002A9009F29E7 /* SMRecepies.m */; };
+		2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,19 @@
 		2D004FBB281CAB3D009F29E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D004FBD281CAB3D009F29E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D004FBE281CAB3D009F29E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2D004FF1281DDF8C009F29E7 /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		2D004FF2281DDF8C009F29E7 /* APIResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIResponse.m; sourceTree = "<group>"; };
+		2D004FF3281DDF8C009F29E7 /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		2D004FF4281DDF8C009F29E7 /* APIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequest.h; sourceTree = "<group>"; };
+		2D004FF5281DDF8C009F29E7 /* APIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequest.m; sourceTree = "<group>"; };
+		2D004FF6281DDF8C009F29E7 /* HTTPMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPMethod.m; sourceTree = "<group>"; };
+		2D004FF7281DDF8C009F29E7 /* HTTPMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPMethod.h; sourceTree = "<group>"; };
+		2D004FF8281DDF8D009F29E7 /* APIResponseDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIResponseDelegate.h; sourceTree = "<group>"; };
+		2D004FFD28200294009F29E7 /* SMRecepies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepies.h; sourceTree = "<group>"; };
+		2D004FFE282002A9009F29E7 /* SMRecepies.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepies.m; sourceTree = "<group>"; };
+		2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepiesViewModel.m; sourceTree = "<group>"; };
+		2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModel.h; sourceTree = "<group>"; };
+		2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModelDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D004FE1281DCEF3009F29E7 /* AFNetworking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,8 +126,8 @@
 		2D004FC8281CADE3009F29E7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				2D004FAF281CAB3A009F29E7 /* ViewController.h */,
-				2D004FB0281CAB3A009F29E7 /* ViewController.m */,
+				2D004FCB281DC6DC009F29E7 /* Networking */,
+				2D004FDE281DCCD7009F29E7 /* Recepies */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -117,6 +138,107 @@
 				2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		2D004FCB281DC6DC009F29E7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2D00500A28201892009F29E7 /* APIClient */,
+				2D00500B2820189C009F29E7 /* APIRequest */,
+				2D00500928201886009F29E7 /* APIResponse */,
+				2D00500C282018A4009F29E7 /* APIMehtod */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2D004FDE281DCCD7009F29E7 /* Recepies */ = {
+			isa = PBXGroup;
+			children = (
+				2D005000282002AF009F29E7 /* Model */,
+				2D005004282017D4009F29E7 /* ViewModel */,
+				2D005005282017DF009F29E7 /* Controller */,
+			);
+			path = Recepies;
+			sourceTree = "<group>";
+		};
+		2D005000282002AF009F29E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FFD28200294009F29E7 /* SMRecepies.h */,
+				2D004FFE282002A9009F29E7 /* SMRecepies.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D005004282017D4009F29E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */,
+				2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */,
+				2D00500728201812009F29E7 /* Protocols */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D005005282017DF009F29E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FAF281CAB3A009F29E7 /* ViewController.h */,
+				2D004FB0281CAB3A009F29E7 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2D00500728201812009F29E7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2D00500828201864009F29E7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FF8281DDF8D009F29E7 /* APIResponseDelegate.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2D00500928201886009F29E7 /* APIResponse */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FF2281DDF8C009F29E7 /* APIResponse.m */,
+				2D00500828201864009F29E7 /* Protocols */,
+			);
+			path = APIResponse;
+			sourceTree = "<group>";
+		};
+		2D00500A28201892009F29E7 /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FF1281DDF8C009F29E7 /* APIClient.h */,
+				2D004FF3281DDF8C009F29E7 /* APIClient.m */,
+			);
+			path = APIClient;
+			sourceTree = "<group>";
+		};
+		2D00500B2820189C009F29E7 /* APIRequest */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FF4281DDF8C009F29E7 /* APIRequest.h */,
+				2D004FF5281DDF8C009F29E7 /* APIRequest.m */,
+			);
+			path = APIRequest;
+			sourceTree = "<group>";
+		};
+		2D00500C282018A4009F29E7 /* APIMehtod */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FF7281DDF8C009F29E7 /* HTTPMethod.h */,
+				2D004FF6281DDF8C009F29E7 /* HTTPMethod.m */,
+			);
+			path = APIMehtod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +257,9 @@
 			dependencies = (
 			);
 			name = superMeals;
+			packageProductDependencies = (
+				2D004FE0281DCEF3009F29E7 /* AFNetworking */,
+			);
 			productName = superMeals;
 			productReference = 2D004FA6281CAB3A009F29E7 /* superMeals.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +287,9 @@
 				Base,
 			);
 			mainGroup = 2D004F9D281CAB39009F29E7;
+			packageReferences = (
+				2D004FDF281DCEF2009F29E7 /* XCRemoteSwiftPackageReference "AFNetworking" */,
+			);
 			productRefGroup = 2D004FA7281CAB3A009F29E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -190,7 +318,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D004FBF281CAB3D009F29E7 /* main.m in Sources */,
+				2D004FFA281DDF8D009F29E7 /* APIClient.m in Sources */,
+				2D004FFB281DDF8D009F29E7 /* APIRequest.m in Sources */,
+				2D004FF9281DDF8D009F29E7 /* APIResponse.m in Sources */,
 				2D004FB7281CAB3A009F29E7 /* superMeals.xcdatamodeld in Sources */,
+				2D004FFC281DDF8D009F29E7 /* HTTPMethod.m in Sources */,
+				2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */,
+				2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */,
 				2D004FB1281CAB3A009F29E7 /* ViewController.m in Sources */,
 				2D004FAB281CAB3A009F29E7 /* AppDelegate.m in Sources */,
 				2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */,
@@ -409,6 +543,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2D004FDF281DCEF2009F29E7 /* XCRemoteSwiftPackageReference "AFNetworking" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AFNetworking/AFNetworking.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2D004FE0281DCEF3009F29E7 /* AFNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D004FDF281DCEF2009F29E7 /* XCRemoteSwiftPackageReference "AFNetworking" */;
+			productName = AFNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */ = {
