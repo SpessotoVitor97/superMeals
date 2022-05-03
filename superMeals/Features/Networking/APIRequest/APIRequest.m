@@ -6,7 +6,7 @@
 //
 
 #import "APIRequest.h"
-#import "APIResponse.h"
+#import "APIResponseDelegate.h"
 
 @interface SimpleAPIRequest()
 
@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSString *path;
 @property (nonatomic, copy) NSDictionary *parameters;
 @property (nonatomic, copy) NSDictionary *headers;
-@property (nonatomic) Class<APIResponse> responseClass;
+@property (nonatomic) Class<APIResponseDelegate> responseClass;
 
 @end
 
@@ -25,7 +25,7 @@
 {
     self = [super init];
     if (self) {
-        self.responseClass = [SimpleAPIResponse class];
+        self.responseClass = [APIResponse class];
     }
     return self;
 }

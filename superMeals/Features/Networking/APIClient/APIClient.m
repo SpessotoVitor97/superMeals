@@ -30,7 +30,7 @@
     task = [self dataTaskWithRequest:httpRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
         Class responseClass = [request responseClass];
-        id<APIResponse> apiResponse = [[responseClass alloc] initWithTask:task response:response responseObject:data error:error];
+        id<APIResponseDelegate> apiResponse = [[responseClass alloc] initWithTask:task response:response responseObject:data error:error];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             if (completion) { completion(apiResponse); }

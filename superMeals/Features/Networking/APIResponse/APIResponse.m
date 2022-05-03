@@ -5,9 +5,9 @@
 //  Created by Vitor Spessoto on 30/04/22.
 //
 
-#import "APIResponse.h"
+#import "APIResponseDelegate.h"
 
-@interface SimpleAPIResponse ()
+@interface APIResponse ()
 
 @property (nonatomic, copy) NSURLSessionDataTask *task;
 @property (nonatomic, copy) NSURLResponse *response;
@@ -17,7 +17,7 @@
 
 @end
 
-@implementation SimpleAPIResponse
+@implementation APIResponse
 
 - (instancetype)initWithTask:(NSURLSessionDataTask *)task response:(NSURLResponse *)response responseObject:(id)responseObject error:(NSError *)error;
 {

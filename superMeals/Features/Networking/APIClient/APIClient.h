@@ -5,12 +5,11 @@
 //  Created by Vitor Spessoto on 30/04/22.
 //
 
-@import Foundation;
-
+#import <Foundation/Foundation.h>
 #import "APIRequest.h"
-#import "APIResponse.h"
+#import "APIResponseDelegate.h"
 
-typedef void(^APIClientCompletionBlock)(id<APIResponse> response);
+typedef void(^APIClientCompletionBlock)(id<APIResponseDelegate> response);
 
 @protocol APIClient <NSObject>
 

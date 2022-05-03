@@ -5,9 +5,9 @@
 //  Created by Vitor Spessoto on 30/04/22.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
-@protocol APIResponse <NSObject>
+@protocol APIResponseDelegate <NSObject>
 
 - (NSURLSessionDataTask *)task;
 - (NSURLResponse *)response;
@@ -24,7 +24,7 @@
 
 @end
 
-@interface SimpleAPIResponse: NSObject <APIResponse> {
+@interface APIResponse: NSObject <APIResponseDelegate> {
     NSURLSessionDataTask *_task;
     NSURLResponse *_response;
     NSError *_error;
@@ -34,6 +34,6 @@
 
 @end
 
-@interface JSONAPIResponse : SimpleAPIResponse
+@interface JSONAPIResponse : APIResponse
 
 @end

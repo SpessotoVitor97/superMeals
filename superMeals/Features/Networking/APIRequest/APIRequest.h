@@ -5,11 +5,10 @@
 //  Created by Vitor Spessoto on 30/04/22.
 //
 
-@import Foundation;
-
+#import <Foundation/Foundation.h>
 #import "HTTPMethod.h"
 
-@protocol APIResponse;
+@protocol APIResponseDelegate;
 
 @protocol APIRequest <NSObject>
 
@@ -18,7 +17,7 @@
 - (NSString *)path;
 - (NSDictionary *)parameters;
 - (NSDictionary *)headers;
-- (Class<APIResponse>)responseClass;
+- (Class<APIResponseDelegate>)responseClass;
 
 @end
 
