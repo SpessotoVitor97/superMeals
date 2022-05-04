@@ -11,7 +11,7 @@
 @protocol SMRecepiesViewModelDelegate <NSObject>
 
 @required
-- (void)onSuccess:(SMRecepies *)recepies;
+- (void)onSuccess;
 - (void)onError:(NSError *)error;
 
 @end

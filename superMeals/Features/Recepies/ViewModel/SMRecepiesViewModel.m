@@ -14,6 +14,10 @@
     [self getDataFrom:url];
 }
 
+- (NSInteger)getTotalRecepies {
+    return [_recepiesArray count];
+}
+
 - (void)getDataFrom:(NSString *)url {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     
@@ -35,12 +39,14 @@
         }
         
         if (data) {
-            NSString *myRecepies = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"Data received: %@", myRecepies);
-            
-            NSError *parseError;
-            self.recepies = [SMRecepies fromJSON:myRecepies encoding:NSUTF8StringEncoding error:&parseError];
-            [self->_delegate onSuccess:self->_recepies];
+            NSError *error;
+            SMRecepies *recepies = [SMRecepies fromData:data error:&error];
+            if (error == NULL) {
+                self->_recepiesArray = [[NSArray alloc] initWithObjects:recepies, nil];
+                [self->_delegate onSuccess];
+            } else {
+                NSLog(@"Ops, something went spectacularly wrong -> \n %@", error);
+            }
         }
     }] resume];
 }

@@ -6,12 +6,13 @@
 //
 
 #import "ViewController.h"
-#import "RecepiesViewController.h"
+#import "RecepiesTableViewCell.h"
 
-@interface ViewController () <SMRecepiesViewModelDelegate>
+@interface ViewController () <SMRecepiesViewModelDelegate, UITableViewDelegate, UITableViewDataSource>
 
 #pragma mark - IBOutlets
-@property (weak, nonatomic) IBOutlet UIButton *getStartedButton;
+
+@property (weak, nonatomic) IBOutlet UITableView *recepiesTableView;
 
 @end
 
@@ -20,13 +21,15 @@
 #pragma mark - Private constants
 NSString *recepie1 = @"http://emeals-menubuilder-public.s3.amazonaws.com/v1/recipes/46168/46168_295947.json";
 NSString *recepie2 = @"http://emeals-menubuilder-public.s3.amazonaws.com/v1/recipes/37767/37767_241270.json";
+NSString *kRecepiesCell = @"RecepiesTableViewCell";
+NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 
 #pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupTableView];
     [self setupViewModel];
-    [self setupUI];
 }
 
 #pragma mark - Private methods
@@ -37,28 +40,40 @@ NSString *recepie2 = @"http://emeals-menubuilder-public.s3.amazonaws.com/v1/reci
     [self fetchRecepies];
 }
 
-- (void)setupUI {
-    self.getStartedButton.layer.cornerRadius = 5;
-    self.getStartedButton.clipsToBounds = YES;
+- (void)setupTableView {
+    [[self recepiesTableView] registerNib:[UINib nibWithNibName:kRecepiesCell bundle:nil] forCellReuseIdentifier:kRecepiesCellRestorationID];
+    _recepiesTableView.delegate = self;
+    _recepiesTableView.dataSource = self;
+    _recepiesTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
 - (void)fetchRecepies {
     [[self viewModel] fetchRecepiesFrom:recepie1];
 }
 
-#pragma mark - IBActions
-- (IBAction)getStartedButtonTouched:(UIButton *)sender {
-    RecepiesViewController *recepiesViewController = [[RecepiesViewController alloc] init];
-    [[self navigationController] pushViewController:recepiesViewController animated:YES];
-}
 
 #pragma mark - SMRecepiesViewModelDelegate methods
-- (void)onSuccess:(SMRecepies *)recepies {
-    NSLog(@"%@", recepies);
+- (void)onSuccess {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->_recepiesTableView reloadData];
+    });
 }
 
 - (void)onError:(NSError *)error {
     NSLog(@"%@", error);
+}
+
+#pragma mark - UItableViewDelegate and dataSource methods
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSInteger numberOfRowsInSection = [_viewModel getTotalRecepies];
+    return numberOfRowsInSection;
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    RecepiesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kRecepiesCellRestorationID forIndexPath:indexPath];
+    [cell configure:[[_viewModel recepiesArray] objectAtIndex:indexPath.row]];
+    
+    return cell;
 }
 
 @end
