@@ -28,11 +28,16 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupNavigationBar];
     [self setupTableView];
     [self setupViewModel];
 }
 
 #pragma mark - Private methods
+- (void)setupNavigationBar {
+    self.navigationController.title = @"Super Meals";
+}
+
 - (void)setupViewModel {
     self.viewModel = [[SMRecepiesViewModel alloc] init];
     _viewModel.delegate = self;
@@ -41,7 +46,8 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 }
 
 - (void)setupTableView {
-    [[self recepiesTableView] registerNib:[UINib nibWithNibName:kRecepiesCell bundle:nil] forCellReuseIdentifier:kRecepiesCellRestorationID];
+    UINib *recepieCell = [UINib nibWithNibName:kRecepiesCell bundle:nil];
+    [[self recepiesTableView] registerNib:recepieCell forCellReuseIdentifier:kRecepiesCellRestorationID];
     _recepiesTableView.delegate = self;
     _recepiesTableView.dataSource = self;
     _recepiesTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;

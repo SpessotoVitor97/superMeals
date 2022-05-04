@@ -41,11 +41,11 @@
         if (data) {
             NSError *error;
             SMRecepies *recepies = [SMRecepies fromData:data error:&error];
-            if (error == NULL) {
+            if (error) {
+                NSLog(@"Ops, something went spectacularly wrong -> \n %@", error);
+            } else {
                 self->_recepiesArray = [[NSArray alloc] initWithObjects:recepies, nil];
                 [self->_delegate onSuccess];
-            } else {
-                NSLog(@"Ops, something went spectacularly wrong -> \n %@", error);
             }
         }
     }] resume];
