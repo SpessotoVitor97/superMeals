@@ -78,8 +78,11 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     RecepiesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kRecepiesCellRestorationID forIndexPath:indexPath];
     [cell configure:[[_viewModel recepiesArray] objectAtIndex:indexPath.row]];
-    
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"User did selected this row -> %@", indexPath);
 }
 
 @end

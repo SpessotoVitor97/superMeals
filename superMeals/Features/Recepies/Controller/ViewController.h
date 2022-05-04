@@ -11,7 +11,6 @@
 @interface ViewController : UIViewController
 
 @property (strong, nonatomic, nonnull) SMRecepiesViewModel *viewModel;
-@property (weak, nonatomic, nullable) id<SMRecepiesViewModelDelegate> delegate;
 
 @end
 
