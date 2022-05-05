@@ -15,6 +15,11 @@
 		2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FB8281CAB3D009F29E7 /* Assets.xcassets */; };
 		2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */; };
 		2D004FBF281CAB3D009F29E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FBE281CAB3D009F29E7 /* main.m */; };
+		2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FFE282002A9009F29E7 /* SMRecepies.m */; };
+		2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */; };
+		2D3E94172821647200CBA44A /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E94162821647200CBA44A /* Service.m */; };
+		2DA6DC2C2821A46500DD7DB6 /* RecepiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */; };
+		2DA6DC2D2821A46500DD7DB6 /* RecepiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,16 @@
 		2D004FBB281CAB3D009F29E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D004FBD281CAB3D009F29E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D004FBE281CAB3D009F29E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2D004FFD28200294009F29E7 /* SMRecepies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepies.h; sourceTree = "<group>"; };
+		2D004FFE282002A9009F29E7 /* SMRecepies.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepies.m; sourceTree = "<group>"; };
+		2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepiesViewModel.m; sourceTree = "<group>"; };
+		2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModel.h; sourceTree = "<group>"; };
+		2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModelDelegate.h; sourceTree = "<group>"; };
+		2D3E94152821646500CBA44A /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
+		2D3E94162821647200CBA44A /* Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		2DA6DC292821A46500DD7DB6 /* RecepiesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecepiesTableViewCell.h; sourceTree = "<group>"; };
+		2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecepiesTableViewCell.m; sourceTree = "<group>"; };
+		2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecepiesTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +120,8 @@
 		2D004FC8281CADE3009F29E7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				2D004FAF281CAB3A009F29E7 /* ViewController.h */,
-				2D004FB0281CAB3A009F29E7 /* ViewController.m */,
+				2D004FCB281DC6DC009F29E7 /* Networking */,
+				2D004FDE281DCCD7009F29E7 /* Recepies */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -117,6 +132,72 @@
 				2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */,
 			);
 			path = DataBase;
+			sourceTree = "<group>";
+		};
+		2D004FCB281DC6DC009F29E7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2D3E94152821646500CBA44A /* Service.h */,
+				2D3E94162821647200CBA44A /* Service.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2D004FDE281DCCD7009F29E7 /* Recepies */ = {
+			isa = PBXGroup;
+			children = (
+				2DF9FE252820B48C0012C3C7 /* View */,
+				2D005000282002AF009F29E7 /* Model */,
+				2D005004282017D4009F29E7 /* ViewModel */,
+				2D005005282017DF009F29E7 /* Controller */,
+			);
+			path = Recepies;
+			sourceTree = "<group>";
+		};
+		2D005000282002AF009F29E7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FFD28200294009F29E7 /* SMRecepies.h */,
+				2D004FFE282002A9009F29E7 /* SMRecepies.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2D005004282017D4009F29E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */,
+				2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */,
+				2D00500728201812009F29E7 /* Protocols */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D005005282017DF009F29E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FAF281CAB3A009F29E7 /* ViewController.h */,
+				2D004FB0281CAB3A009F29E7 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2D00500728201812009F29E7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2DF9FE252820B48C0012C3C7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2DA6DC292821A46500DD7DB6 /* RecepiesTableViewCell.h */,
+				2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */,
+				2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +216,8 @@
 			dependencies = (
 			);
 			name = superMeals;
+			packageProductDependencies = (
+			);
 			productName = superMeals;
 			productReference = 2D004FA6281CAB3A009F29E7 /* superMeals.app */;
 			productType = "com.apple.product-type.application";
@@ -162,6 +245,8 @@
 				Base,
 			);
 			mainGroup = 2D004F9D281CAB39009F29E7;
+			packageReferences = (
+			);
 			productRefGroup = 2D004FA7281CAB3A009F29E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -177,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */,
+				2DA6DC2D2821A46500DD7DB6 /* RecepiesTableViewCell.xib in Resources */,
 				2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */,
 				2D004FB4281CAB3A009F29E7 /* Main.storyboard in Resources */,
 			);
@@ -191,9 +277,13 @@
 			files = (
 				2D004FBF281CAB3D009F29E7 /* main.m in Sources */,
 				2D004FB7281CAB3A009F29E7 /* superMeals.xcdatamodeld in Sources */,
+				2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */,
+				2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */,
 				2D004FB1281CAB3A009F29E7 /* ViewController.m in Sources */,
 				2D004FAB281CAB3A009F29E7 /* AppDelegate.m in Sources */,
 				2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */,
+				2D3E94172821647200CBA44A /* Service.m in Sources */,
+				2DA6DC2C2821A46500DD7DB6 /* RecepiesTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
