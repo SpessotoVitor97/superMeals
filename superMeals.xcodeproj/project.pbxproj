@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D004FAB281CAB3A009F29E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FAA281CAB3A009F29E7 /* AppDelegate.m */; };
 		2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FAD281CAB3A009F29E7 /* SceneDelegate.m */; };
-		2D004FB1281CAB3A009F29E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FB0281CAB3A009F29E7 /* ViewController.m */; };
+		2D004FB1281CAB3A009F29E7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FB0281CAB3A009F29E7 /* HomeViewController.m */; };
 		2D004FB4281CAB3A009F29E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FB2281CAB3A009F29E7 /* Main.storyboard */; };
 		2D004FB7281CAB3A009F29E7 /* superMeals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */; };
 		2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FB8281CAB3D009F29E7 /* Assets.xcassets */; };
@@ -28,8 +28,8 @@
 		2D004FAA281CAB3A009F29E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2D004FAC281CAB3A009F29E7 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		2D004FAD281CAB3A009F29E7 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		2D004FAF281CAB3A009F29E7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2D004FB0281CAB3A009F29E7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2D004FAF281CAB3A009F29E7 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		2D004FB0281CAB3A009F29E7 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2D004FB3281CAB3A009F29E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D004FB6281CAB3A009F29E7 /* superMeals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = superMeals.xcdatamodel; sourceTree = "<group>"; };
 		2D004FB8281CAB3D009F29E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,10 +146,7 @@
 		2D004FDE281DCCD7009F29E7 /* Recepies */ = {
 			isa = PBXGroup;
 			children = (
-				2DF9FE252820B48C0012C3C7 /* View */,
-				2D005000282002AF009F29E7 /* Model */,
-				2D005004282017D4009F29E7 /* ViewModel */,
-				2D005005282017DF009F29E7 /* Controller */,
+				2D98E8FA282367A400DE0CE5 /* HomeScreen */,
 			);
 			path = Recepies;
 			sourceTree = "<group>";
@@ -176,8 +173,8 @@
 		2D005005282017DF009F29E7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2D004FAF281CAB3A009F29E7 /* ViewController.h */,
-				2D004FB0281CAB3A009F29E7 /* ViewController.m */,
+				2D004FAF281CAB3A009F29E7 /* HomeViewController.h */,
+				2D004FB0281CAB3A009F29E7 /* HomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +185,17 @@
 				2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2D98E8FA282367A400DE0CE5 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DF9FE252820B48C0012C3C7 /* View */,
+				2D005000282002AF009F29E7 /* Model */,
+				2D005004282017D4009F29E7 /* ViewModel */,
+				2D005005282017DF009F29E7 /* Controller */,
+			);
+			path = HomeScreen;
 			sourceTree = "<group>";
 		};
 		2DF9FE252820B48C0012C3C7 /* View */ = {
@@ -279,7 +287,7 @@
 				2D004FB7281CAB3A009F29E7 /* superMeals.xcdatamodeld in Sources */,
 				2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */,
 				2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */,
-				2D004FB1281CAB3A009F29E7 /* ViewController.m in Sources */,
+				2D004FB1281CAB3A009F29E7 /* HomeViewController.m in Sources */,
 				2D004FAB281CAB3A009F29E7 /* AppDelegate.m in Sources */,
 				2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */,
 				2D3E94172821647200CBA44A /* Service.m in Sources */,

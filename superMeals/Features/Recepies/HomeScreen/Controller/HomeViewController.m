@@ -1,14 +1,14 @@
 //
-//  ViewController.m
+//  HomeViewController.m
 //  superMeals
 //
 //  Created by Vitor Spessoto on 29/04/22.
 //
 
-#import "ViewController.h"
+#import "HomeViewController.h"
 #import "RecepiesTableViewCell.h"
 
-@interface ViewController () <SMRecepiesViewModelDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface HomeViewController () <SMRecepiesViewModelDelegate, UITableViewDelegate, UITableViewDataSource>
 
 #pragma mark - IBOutlets
 
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation ViewController
+@implementation HomeViewController
 
 #pragma mark - Private constants
 NSString *kRecepiesCell = @"RecepiesTableViewCell";
@@ -25,15 +25,15 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 #pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = @"Super Meals";
+    
     [self setupTableView];
     [self setupViewModel];
 }
 
 #pragma mark - Private methods
 - (void)setupViewModel {
-    self.viewModel = [[SMRecepiesViewModel alloc] init];
+    _viewModel = [[SMRecepiesViewModel alloc] init];
     _viewModel.delegate = self;
     
     [_viewModel fetchRecepies];
