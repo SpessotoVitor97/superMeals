@@ -19,8 +19,6 @@
 @implementation ViewController
 
 #pragma mark - Private constants
-NSString *recepie1 = @"http://emeals-menubuilder-public.s3.amazonaws.com/v1/recipes/46168/46168_295947.json";
-NSString *recepie2 = @"http://emeals-menubuilder-public.s3.amazonaws.com/v1/recipes/37767/37767_241270.json";
 NSString *kRecepiesCell = @"RecepiesTableViewCell";
 NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 
@@ -42,7 +40,7 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
     self.viewModel = [[SMRecepiesViewModel alloc] init];
     _viewModel.delegate = self;
     
-    [self fetchRecepies];
+    [_viewModel fetchRecepies];
 }
 
 - (void)setupTableView {
@@ -51,10 +49,6 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
     _recepiesTableView.delegate = self;
     _recepiesTableView.dataSource = self;
     _recepiesTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-}
-
-- (void)fetchRecepies {
-    [[self viewModel] fetchRecepiesFrom:recepie1];
 }
 
 
