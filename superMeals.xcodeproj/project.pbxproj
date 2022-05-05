@@ -18,6 +18,8 @@
 		2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FFE282002A9009F29E7 /* SMRecepies.m */; };
 		2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */; };
 		2D3E94172821647200CBA44A /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E94162821647200CBA44A /* Service.m */; };
+		2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */; };
+		2D98E9002823697A00DE0CE5 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D98E8FE2823697900DE0CE5 /* DetailsViewController.xib */; };
 		2DA6DC2C2821A46500DD7DB6 /* RecepiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */; };
 		2DA6DC2D2821A46500DD7DB6 /* RecepiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,9 @@
 		2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModelDelegate.h; sourceTree = "<group>"; };
 		2D3E94152821646500CBA44A /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		2D3E94162821647200CBA44A /* Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		2D98E8FC2823697900DE0CE5 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		2D98E8FE2823697900DE0CE5 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		2DA6DC292821A46500DD7DB6 /* RecepiesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecepiesTableViewCell.h; sourceTree = "<group>"; };
 		2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecepiesTableViewCell.m; sourceTree = "<group>"; };
 		2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecepiesTableViewCell.xib; sourceTree = "<group>"; };
@@ -89,8 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				2D004FBE281CAB3D009F29E7 /* main.m */,
-				2D004FB2281CAB3A009F29E7 /* Main.storyboard */,
-				2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */,
+				2D98E903282369F300DE0CE5 /* Storyboards */,
 				2D004FC7281CADB9009F29E7 /* Delegates */,
 				2D004FC6281CADA7009F29E7 /* SupportingFiles */,
 			);
@@ -137,8 +141,8 @@
 		2D004FCB281DC6DC009F29E7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2D3E94152821646500CBA44A /* Service.h */,
-				2D3E94162821647200CBA44A /* Service.m */,
+				2D005000282002AF009F29E7 /* Model */,
+				2D98E90428236A2200DE0CE5 /* Service */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -147,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				2D98E8FA282367A400DE0CE5 /* HomeScreen */,
+				2D98E8FB2823695700DE0CE5 /* DetailsScreen */,
 			);
 			path = Recepies;
 			sourceTree = "<group>";
@@ -191,19 +196,62 @@
 			isa = PBXGroup;
 			children = (
 				2DF9FE252820B48C0012C3C7 /* View */,
-				2D005000282002AF009F29E7 /* Model */,
 				2D005004282017D4009F29E7 /* ViewModel */,
 				2D005005282017DF009F29E7 /* Controller */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
 		};
+		2D98E8FB2823695700DE0CE5 /* DetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2D98E901282369CE00DE0CE5 /* View */,
+				2D98E902282369D800DE0CE5 /* Controller */,
+			);
+			path = DetailsScreen;
+			sourceTree = "<group>";
+		};
+		2D98E901282369CE00DE0CE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D98E8FE2823697900DE0CE5 /* DetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D98E902282369D800DE0CE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2D98E8FC2823697900DE0CE5 /* DetailsViewController.h */,
+				2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2D98E903282369F300DE0CE5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FB2281CAB3A009F29E7 /* Main.storyboard */,
+				2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2D98E90428236A2200DE0CE5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2D3E94152821646500CBA44A /* Service.h */,
+				2D3E94162821647200CBA44A /* Service.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		2DF9FE252820B48C0012C3C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */,
 				2DA6DC292821A46500DD7DB6 /* RecepiesTableViewCell.h */,
 				2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */,
-				2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -271,6 +319,7 @@
 			files = (
 				2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */,
 				2DA6DC2D2821A46500DD7DB6 /* RecepiesTableViewCell.xib in Resources */,
+				2D98E9002823697A00DE0CE5 /* DetailsViewController.xib in Resources */,
 				2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */,
 				2D004FB4281CAB3A009F29E7 /* Main.storyboard in Resources */,
 			);
@@ -284,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D004FBF281CAB3D009F29E7 /* main.m in Sources */,
+				2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */,
 				2D004FB7281CAB3A009F29E7 /* superMeals.xcdatamodeld in Sources */,
 				2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */,
 				2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */,
