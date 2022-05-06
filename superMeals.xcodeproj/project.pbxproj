@@ -9,15 +9,17 @@
 /* Begin PBXBuildFile section */
 		2D004FAB281CAB3A009F29E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FAA281CAB3A009F29E7 /* AppDelegate.m */; };
 		2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FAD281CAB3A009F29E7 /* SceneDelegate.m */; };
-		2D004FB1281CAB3A009F29E7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FB0281CAB3A009F29E7 /* ViewController.m */; };
+		2D004FB1281CAB3A009F29E7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FB0281CAB3A009F29E7 /* HomeViewController.m */; };
 		2D004FB4281CAB3A009F29E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FB2281CAB3A009F29E7 /* Main.storyboard */; };
-		2D004FB7281CAB3A009F29E7 /* superMeals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */; };
 		2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FB8281CAB3D009F29E7 /* Assets.xcassets */; };
 		2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */; };
 		2D004FBF281CAB3D009F29E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FBE281CAB3D009F29E7 /* main.m */; };
 		2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FFE282002A9009F29E7 /* SMRecepies.m */; };
 		2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */; };
+		2D0D465E2824AC7C00843A13 /* DetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */; };
 		2D3E94172821647200CBA44A /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E94162821647200CBA44A /* Service.m */; };
+		2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */; };
+		2D98E9002823697A00DE0CE5 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D98E8FE2823697900DE0CE5 /* DetailsViewController.xib */; };
 		2DA6DC2C2821A46500DD7DB6 /* RecepiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */; };
 		2DA6DC2D2821A46500DD7DB6 /* RecepiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -28,10 +30,9 @@
 		2D004FAA281CAB3A009F29E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2D004FAC281CAB3A009F29E7 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
 		2D004FAD281CAB3A009F29E7 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		2D004FAF281CAB3A009F29E7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2D004FB0281CAB3A009F29E7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2D004FAF281CAB3A009F29E7 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		2D004FB0281CAB3A009F29E7 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2D004FB3281CAB3A009F29E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2D004FB6281CAB3A009F29E7 /* superMeals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = superMeals.xcdatamodel; sourceTree = "<group>"; };
 		2D004FB8281CAB3D009F29E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D004FBB281CAB3D009F29E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D004FBD281CAB3D009F29E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,8 +42,13 @@
 		2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepiesViewModel.m; sourceTree = "<group>"; };
 		2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModel.h; sourceTree = "<group>"; };
 		2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModelDelegate.h; sourceTree = "<group>"; };
+		2D0D465C2824AC7000843A13 /* DetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewModel.h; sourceTree = "<group>"; };
+		2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewModel.m; sourceTree = "<group>"; };
 		2D3E94152821646500CBA44A /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		2D3E94162821647200CBA44A /* Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		2D98E8FC2823697900DE0CE5 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		2D98E8FE2823697900DE0CE5 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		2DA6DC292821A46500DD7DB6 /* RecepiesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecepiesTableViewCell.h; sourceTree = "<group>"; };
 		2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecepiesTableViewCell.m; sourceTree = "<group>"; };
 		2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecepiesTableViewCell.xib; sourceTree = "<group>"; };
@@ -80,7 +86,6 @@
 			children = (
 				2D004FC5281CAD65009F29E7 /* AppInfra */,
 				2D004FC8281CADE3009F29E7 /* Features */,
-				2D004FC9281CADEB009F29E7 /* DataBase */,
 			);
 			path = superMeals;
 			sourceTree = "<group>";
@@ -89,8 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				2D004FBE281CAB3D009F29E7 /* main.m */,
-				2D004FB2281CAB3A009F29E7 /* Main.storyboard */,
-				2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */,
+				2D98E903282369F300DE0CE5 /* Storyboards */,
 				2D004FC7281CADB9009F29E7 /* Delegates */,
 				2D004FC6281CADA7009F29E7 /* SupportingFiles */,
 			);
@@ -126,19 +130,11 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
-		2D004FC9281CADEB009F29E7 /* DataBase */ = {
-			isa = PBXGroup;
-			children = (
-				2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */,
-			);
-			path = DataBase;
-			sourceTree = "<group>";
-		};
 		2D004FCB281DC6DC009F29E7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2D3E94152821646500CBA44A /* Service.h */,
-				2D3E94162821647200CBA44A /* Service.m */,
+				2D005000282002AF009F29E7 /* Model */,
+				2D98E90428236A2200DE0CE5 /* Service */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -146,10 +142,8 @@
 		2D004FDE281DCCD7009F29E7 /* Recepies */ = {
 			isa = PBXGroup;
 			children = (
-				2DF9FE252820B48C0012C3C7 /* View */,
-				2D005000282002AF009F29E7 /* Model */,
-				2D005004282017D4009F29E7 /* ViewModel */,
-				2D005005282017DF009F29E7 /* Controller */,
+				2D98E8FA282367A400DE0CE5 /* HomeScreen */,
+				2D98E8FB2823695700DE0CE5 /* DetailsScreen */,
 			);
 			path = Recepies;
 			sourceTree = "<group>";
@@ -168,7 +162,7 @@
 			children = (
 				2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */,
 				2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */,
-				2D00500728201812009F29E7 /* Protocols */,
+				2D00500728201812009F29E7 /* Delegates */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -176,26 +170,90 @@
 		2D005005282017DF009F29E7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2D004FAF281CAB3A009F29E7 /* ViewController.h */,
-				2D004FB0281CAB3A009F29E7 /* ViewController.m */,
+				2D004FAF281CAB3A009F29E7 /* HomeViewController.h */,
+				2D004FB0281CAB3A009F29E7 /* HomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		2D00500728201812009F29E7 /* Protocols */ = {
+		2D00500728201812009F29E7 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */,
 			);
-			path = Protocols;
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		2D0D46602824AC9C00843A13 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D0D465C2824AC7000843A13 /* DetailsViewModel.h */,
+				2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D98E8FA282367A400DE0CE5 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DF9FE252820B48C0012C3C7 /* View */,
+				2D005004282017D4009F29E7 /* ViewModel */,
+				2D005005282017DF009F29E7 /* Controller */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		2D98E8FB2823695700DE0CE5 /* DetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2D98E901282369CE00DE0CE5 /* View */,
+				2D0D46602824AC9C00843A13 /* ViewModel */,
+				2D98E902282369D800DE0CE5 /* Controller */,
+			);
+			path = DetailsScreen;
+			sourceTree = "<group>";
+		};
+		2D98E901282369CE00DE0CE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2D98E8FE2823697900DE0CE5 /* DetailsViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2D98E902282369D800DE0CE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2D98E8FC2823697900DE0CE5 /* DetailsViewController.h */,
+				2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2D98E903282369F300DE0CE5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2D004FB2281CAB3A009F29E7 /* Main.storyboard */,
+				2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		2D98E90428236A2200DE0CE5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				2D3E94152821646500CBA44A /* Service.h */,
+				2D3E94162821647200CBA44A /* Service.m */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		2DF9FE252820B48C0012C3C7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */,
 				2DA6DC292821A46500DD7DB6 /* RecepiesTableViewCell.h */,
 				2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */,
-				2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +321,7 @@
 			files = (
 				2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */,
 				2DA6DC2D2821A46500DD7DB6 /* RecepiesTableViewCell.xib in Resources */,
+				2D98E9002823697A00DE0CE5 /* DetailsViewController.xib in Resources */,
 				2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */,
 				2D004FB4281CAB3A009F29E7 /* Main.storyboard in Resources */,
 			);
@@ -276,10 +335,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D004FBF281CAB3D009F29E7 /* main.m in Sources */,
-				2D004FB7281CAB3A009F29E7 /* superMeals.xcdatamodeld in Sources */,
+				2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */,
+				2D0D465E2824AC7C00843A13 /* DetailsViewModel.m in Sources */,
 				2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */,
 				2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */,
-				2D004FB1281CAB3A009F29E7 /* ViewController.m in Sources */,
+				2D004FB1281CAB3A009F29E7 /* HomeViewController.m in Sources */,
 				2D004FAB281CAB3A009F29E7 /* AppDelegate.m in Sources */,
 				2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */,
 				2D3E94172821647200CBA44A /* Service.m in Sources */,
@@ -359,7 +419,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -411,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -432,7 +492,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -440,7 +500,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.VitorSpessoto.superMeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -461,7 +521,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -469,7 +529,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.VitorSpessoto.superMeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -499,19 +559,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2D004FB6281CAB3A009F29E7 /* superMeals.xcdatamodel */,
-			);
-			currentVersion = 2D004FB6281CAB3A009F29E7 /* superMeals.xcdatamodel */;
-			path = superMeals.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2D004F9E281CAB39009F29E7 /* Project object */;
 }
