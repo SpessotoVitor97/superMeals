@@ -7,6 +7,8 @@
 
 #import "HomeViewController.h"
 #import "RecepiesTableViewCell.h"
+#import "DetailsViewModel.h"
+#import "DetailsViewController.h"
 
 @interface HomeViewController () <SMRecepiesViewModelDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -31,6 +33,10 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
     [self setupViewModel];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [[self navigationController] navigationBar].backgroundColor = [UIColor systemBackgroundColor];
+}
+
 #pragma mark - Private methods
 - (void)setupViewModel {
     _viewModel = [[SMRecepiesViewModel alloc] init];
@@ -47,6 +53,15 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
     _recepiesTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
+- (void)downloadImage:(RecepiesTableViewCell *)cell recepie:(SMRecepies *)recepie {
+    [_viewModel downloadMainImageFor:recepie completionHandler:^(UIImage * _Nullable image) {
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            cell.recepieImageView.image = image;
+            [self->_recepiesTableView reloadData];
+        });
+    }];
+}
+
 
 #pragma mark - SMRecepiesViewModelDelegate methods
 - (void)onSuccess {
@@ -57,6 +72,20 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 
 - (void)onError:(NSError *)error {
     NSLog(@"%@", error);
+    [self displayAlert:error];
+}
+
+- (void)displayAlert:(NSError * _Nonnull)error {
+    NSString *message = [NSString stringWithFormat:@"%@", error.localizedDescription];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"We are sorry..."
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alertController addAction:actionOk];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - UItableViewDelegate and dataSource methods
@@ -67,12 +96,25 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     RecepiesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kRecepiesCellRestorationID forIndexPath:indexPath];
-    [cell configure:[[_viewModel recepiesArray] objectAtIndex:indexPath.row]];
+    SMRecepies *recepie = [[_viewModel recepiesArray] objectAtIndex:indexPath.row];
+    [self downloadImage:cell recepie:recepie];
+    [cell configureLabelsFor:recepie];
+    
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"User did selected this row -> %@", indexPath);
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    SMRecepies *recepie = [[_viewModel recepiesArray] objectAtIndex:indexPath.row];
+    
+    DetailsViewModel *detailsViewModel = [[DetailsViewModel alloc] init];
+    detailsViewModel.recepies = recepie;
+    
+    DetailsViewController *detailsViewController = [[DetailsViewController alloc] init];
+    detailsViewController.viewModel = detailsViewModel;
+    
+    [[self navigationController] pushViewController:detailsViewController animated:YES];
 }
 
 @end

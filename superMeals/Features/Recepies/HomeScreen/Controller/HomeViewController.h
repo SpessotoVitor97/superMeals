@@ -8,9 +8,13 @@
 #import <UIKit/UIKit.h>
 #import "SMRecepiesViewModel.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface HomeViewController : UIViewController
 
-@property (strong, nonatomic, nonnull) SMRecepiesViewModel *viewModel;
+@property (strong, nonatomic, readwrite) SMRecepiesViewModel *viewModel;
 
 @end
+
+NS_ASSUME_NONNULL_END
 

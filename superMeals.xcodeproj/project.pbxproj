@@ -11,12 +11,12 @@
 		2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FAD281CAB3A009F29E7 /* SceneDelegate.m */; };
 		2D004FB1281CAB3A009F29E7 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FB0281CAB3A009F29E7 /* HomeViewController.m */; };
 		2D004FB4281CAB3A009F29E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FB2281CAB3A009F29E7 /* Main.storyboard */; };
-		2D004FB7281CAB3A009F29E7 /* superMeals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */; };
 		2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FB8281CAB3D009F29E7 /* Assets.xcassets */; };
 		2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */; };
 		2D004FBF281CAB3D009F29E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FBE281CAB3D009F29E7 /* main.m */; };
 		2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FFE282002A9009F29E7 /* SMRecepies.m */; };
 		2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */; };
+		2D0D465E2824AC7C00843A13 /* DetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */; };
 		2D3E94172821647200CBA44A /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E94162821647200CBA44A /* Service.m */; };
 		2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */; };
 		2D98E9002823697A00DE0CE5 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D98E8FE2823697900DE0CE5 /* DetailsViewController.xib */; };
@@ -33,7 +33,6 @@
 		2D004FAF281CAB3A009F29E7 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		2D004FB0281CAB3A009F29E7 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		2D004FB3281CAB3A009F29E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2D004FB6281CAB3A009F29E7 /* superMeals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = superMeals.xcdatamodel; sourceTree = "<group>"; };
 		2D004FB8281CAB3D009F29E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D004FBB281CAB3D009F29E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D004FBD281CAB3D009F29E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -43,6 +42,8 @@
 		2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepiesViewModel.m; sourceTree = "<group>"; };
 		2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModel.h; sourceTree = "<group>"; };
 		2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModelDelegate.h; sourceTree = "<group>"; };
+		2D0D465C2824AC7000843A13 /* DetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewModel.h; sourceTree = "<group>"; };
+		2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewModel.m; sourceTree = "<group>"; };
 		2D3E94152821646500CBA44A /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		2D3E94162821647200CBA44A /* Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
 		2D98E8FC2823697900DE0CE5 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 			children = (
 				2D004FC5281CAD65009F29E7 /* AppInfra */,
 				2D004FC8281CADE3009F29E7 /* Features */,
-				2D004FC9281CADEB009F29E7 /* DataBase */,
 			);
 			path = superMeals;
 			sourceTree = "<group>";
@@ -130,14 +130,6 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
-		2D004FC9281CADEB009F29E7 /* DataBase */ = {
-			isa = PBXGroup;
-			children = (
-				2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */,
-			);
-			path = DataBase;
-			sourceTree = "<group>";
-		};
 		2D004FCB281DC6DC009F29E7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +162,7 @@
 			children = (
 				2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */,
 				2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */,
-				2D00500728201812009F29E7 /* Protocols */,
+				2D00500728201812009F29E7 /* Delegates */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,12 +176,21 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		2D00500728201812009F29E7 /* Protocols */ = {
+		2D00500728201812009F29E7 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */,
 			);
-			path = Protocols;
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		2D0D46602824AC9C00843A13 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2D0D465C2824AC7000843A13 /* DetailsViewModel.h */,
+				2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		2D98E8FA282367A400DE0CE5 /* HomeScreen */ = {
@@ -206,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				2D98E901282369CE00DE0CE5 /* View */,
+				2D0D46602824AC9C00843A13 /* ViewModel */,
 				2D98E902282369D800DE0CE5 /* Controller */,
 			);
 			path = DetailsScreen;
@@ -334,7 +336,7 @@
 			files = (
 				2D004FBF281CAB3D009F29E7 /* main.m in Sources */,
 				2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */,
-				2D004FB7281CAB3A009F29E7 /* superMeals.xcdatamodeld in Sources */,
+				2D0D465E2824AC7C00843A13 /* DetailsViewModel.m in Sources */,
 				2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */,
 				2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */,
 				2D004FB1281CAB3A009F29E7 /* HomeViewController.m in Sources */,
@@ -557,19 +559,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2D004FB5281CAB3A009F29E7 /* superMeals.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2D004FB6281CAB3A009F29E7 /* superMeals.xcdatamodel */,
-			);
-			currentVersion = 2D004FB6281CAB3A009F29E7 /* superMeals.xcdatamodel */;
-			path = superMeals.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2D004F9E281CAB39009F29E7 /* Project object */;
 }

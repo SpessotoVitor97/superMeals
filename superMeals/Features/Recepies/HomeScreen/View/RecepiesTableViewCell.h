@@ -18,8 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *recepieServings;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-- (void)setup:(NSDictionary *)recepie;
-- (void)configure:(SMRecepies *)recepie;
+- (void)configureLabelsFor:(SMRecepies *)recepie;
 
 @end
 

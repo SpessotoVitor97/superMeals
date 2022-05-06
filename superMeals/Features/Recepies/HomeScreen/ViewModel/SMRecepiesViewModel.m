@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "SMRecepiesViewModel.h"
 #import "Service.h"
 
@@ -45,6 +46,15 @@ NSArray *urlsArray = @[
             }
         }];
     }
+}
+
+- (void)downloadMainImageFor:(SMRecepies *)recepie completionHandler:(void (^)(UIImage * _Nullable image))completionHandler {
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+        NSURL *url = [NSURL URLWithString:recepie.main.primaryPictureURL];
+        NSData *imageData = [NSData dataWithContentsOfURL:url];
+        UIImage *recepieImage = [UIImage imageWithData:imageData];
+        completionHandler(recepieImage);
+    });
 }
 
 - (NSInteger)getTotalRecepies {

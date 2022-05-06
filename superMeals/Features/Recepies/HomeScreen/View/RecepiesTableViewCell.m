@@ -39,40 +39,26 @@
     _recepieServings.font = [UIFont boldSystemFontOfSize:15];
 }
 
-- (void)setup:(NSDictionary *)recepie {
-    
-    NSString *recepieImageURL = [[recepie objectForKey:@"main"] objectForKey:@"primary_picture_url"];
-    NSString *planStyle = [recepie objectForKey:@"plan_style"];
-    NSString *planSize = [recepie objectForKey:@"plan_size"];
-    
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        NSURL *url = [NSURL URLWithString:recepieImageURL];
-        NSData *imageData = [NSData dataWithContentsOfURL:url];
-        UIImage *recepieImage = [UIImage imageWithData:imageData];
-        
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            self->_recepieImageView.image = recepieImage;
-            self->_recepieStyle.text = planStyle;
-            self->_recepieServings.text = planSize;
-            [self->_activityIndicator stopAnimating];
-        });
+- (void)configureLabelsFor:(SMRecepies *)recepie {
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+//        self->_recepieImageView.image = recepieImage;
+        self->_recepieStyle.text = recepie.planStyle;
+        self->_recepieServings.text = recepie.planSize;
+        [self->_activityIndicator stopAnimating];
     });
-}
-
-- (void)configure:(SMRecepies *)recepie {
     
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        NSURL *url = [NSURL URLWithString:recepie.main.primaryPictureURL];
-        NSData *imageData = [NSData dataWithContentsOfURL:url];
-        UIImage *recepieImage = [UIImage imageWithData:imageData];
-        
-        dispatch_async(dispatch_get_main_queue(), ^(void) {
-            self->_recepieImageView.image = recepieImage;
-            self->_recepieStyle.text = recepie.planStyle;
-            self->_recepieServings.text = recepie.planSize;
-            [self->_activityIndicator stopAnimating];
-        });
-    });
+//    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
+//        NSURL *url = [NSURL URLWithString:recepie.main.primaryPictureURL];
+//        NSData *imageData = [NSData dataWithContentsOfURL:url];
+//        UIImage *recepieImage = [UIImage imageWithData:imageData];
+//
+//        dispatch_async(dispatch_get_main_queue(), ^(void) {
+//            self->_recepieImageView.image = recepieImage;
+//            self->_recepieStyle.text = recepie.planStyle;
+//            self->_recepieServings.text = recepie.planSize;
+//            [self->_activityIndicator stopAnimating];
+//        });
+//    });
 }
 
 @end
