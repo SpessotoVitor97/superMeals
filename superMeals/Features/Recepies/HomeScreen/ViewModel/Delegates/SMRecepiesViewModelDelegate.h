@@ -6,7 +6,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SMRecepies.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @protocol SMRecepiesViewModelDelegate <NSObject>
 
@@ -15,3 +16,5 @@
 - (void)onError:(NSError *)error;
 
 @end
+
+NS_ASSUME_NONNULL_END
