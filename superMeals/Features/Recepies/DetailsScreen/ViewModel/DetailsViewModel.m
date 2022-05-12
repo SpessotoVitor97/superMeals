@@ -10,21 +10,16 @@
 
 @implementation DetailsViewModel : NSObject
 
-- (void)downloadMainImageFor:(SMRecepies *)recepie completionHandler:(void (^)(UIImage * _Nullable image))completionHandler {
+- (void)downloadImage:(NSString *)urlString {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        NSURL *url = [NSURL URLWithString:recepie.main.primaryPictureURL];
+        NSURL *url = [NSURL URLWithString:urlString];
         NSData *imageData = [NSData dataWithContentsOfURL:url];
         UIImage *recepieImage = [UIImage imageWithData:imageData];
-        completionHandler(recepieImage);
-    });
-}
-
-- (void)downloadMainImage:(void (^_Nonnull)(UIImage * _Nullable image))completionHandler {
-    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-        NSURL *url = [NSURL URLWithString:self->_recepies.main.primaryPictureURL];
-        NSData *imageData = [NSData dataWithContentsOfURL:url];
-        UIImage *recepieImage = [UIImage imageWithData:imageData];
-        completionHandler(recepieImage);
+        if (recepieImage) {
+            [self->_delegate onSuccess:recepieImage];
+        } else {
+            [self->_delegate onError:@"Failed to download image"];
+        }
     });
 }
 
