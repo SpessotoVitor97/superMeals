@@ -46,6 +46,7 @@
 		2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewModel.m; sourceTree = "<group>"; };
 		2D3E94152821646500CBA44A /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
 		2D3E94162821647200CBA44A /* Service.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Service.m; sourceTree = "<group>"; };
+		2D8E88CE282D7FEA0069399C /* DetailsViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewModelDelegate.h; sourceTree = "<group>"; };
 		2D98E8FC2823697900DE0CE5 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		2D98E8FE2823697900DE0CE5 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
@@ -189,8 +190,17 @@
 			children = (
 				2D0D465C2824AC7000843A13 /* DetailsViewModel.h */,
 				2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */,
+				2D8E88CF282D80010069399C /* Delegates */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2D8E88CF282D80010069399C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				2D8E88CE282D7FEA0069399C /* DetailsViewModelDelegate.h */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		2D98E8FA282367A400DE0CE5 /* HomeScreen */ = {
@@ -500,7 +510,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.VitorSpessoto.superMeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -529,7 +539,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.VitorSpessoto.superMeals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
