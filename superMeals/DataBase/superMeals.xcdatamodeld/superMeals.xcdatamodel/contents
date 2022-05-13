@@ -85,10 +85,10 @@
         <relationship name="itemRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SMItem" inverseName="subItemRelationship" inverseEntity="SMItem"/>
     </entity>
     <elements>
-        <element name="SMItem" positionX="81.65234375" positionY="-265.20703125" width="128" height="344"/>
-        <element name="SMMain" positionX="-286.86328125" positionY="-286.95703125" width="128" height="329"/>
-        <element name="SMNutritionalInformation" positionX="-44.9375" positionY="132.796875" width="128" height="149"/>
-        <element name="SMRecepies" positionX="-102.37109375" positionY="-64.36328125" width="128" height="178"/>
-        <element name="SMSubItem" positionX="282.91796875" positionY="-228.359375" width="128" height="269"/>
+        <element name="SMItem" positionX="149.890625" positionY="247.34375" width="128" height="358"/>
+        <element name="SMMain" positionX="317.6171875" positionY="93.27734375" width="128" height="343"/>
+        <element name="SMNutritionalInformation" positionX="504.00390625" positionY="293.5234375" width="128" height="163"/>
+        <element name="SMRecepies" positionX="324.84375" positionY="495.546875" width="128" height="178"/>
+        <element name="SMSubItem" positionX="-11.2109375" positionY="382.734375" width="128" height="283"/>
     </elements>
 </model>

@@ -79,7 +79,7 @@
 }
 
 - (void)configureUI {
-    SMRecepies *recepies = _viewModel.recepies;
+    SMRecepiesContainer *recepies = _viewModel.recepies;
     long totalTime = recepies.main.prepTime + recepies.main.cookTime;
     
     [_viewModel downloadImage:recepies.main.primaryPictureURL];

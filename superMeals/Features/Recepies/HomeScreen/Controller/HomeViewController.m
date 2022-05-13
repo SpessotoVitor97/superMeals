@@ -53,7 +53,7 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
     _recepiesTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 }
 
-- (void)downloadImage:(RecepiesTableViewCell *)cell recepie:(SMRecepies *)recepie {
+- (void)downloadImage:(RecepiesTableViewCell *)cell recepie:(SMRecepiesContainer *)recepie {
     [_viewModel downloadMainImageFor:recepie completionHandler:^(UIImage * _Nullable image) {
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             cell.recepieImageView.image = image;
@@ -96,7 +96,7 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     RecepiesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kRecepiesCellRestorationID forIndexPath:indexPath];
-    SMRecepies *recepie = [[_viewModel recepiesArray] objectAtIndex:indexPath.row];
+    SMRecepiesContainer *recepie = [[_viewModel recepiesArray] objectAtIndex:indexPath.row];
     [self downloadImage:cell recepie:recepie];
     [cell configureLabelsFor:recepie];
     
@@ -106,7 +106,7 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    SMRecepies *recepie = [[_viewModel recepiesArray] objectAtIndex:indexPath.row];
+    SMRecepiesContainer *recepie = [[_viewModel recepiesArray] objectAtIndex:indexPath.row];
     
     DetailsViewModel *detailsViewModel = [[DetailsViewModel alloc] init];
     detailsViewModel.recepies = recepie;

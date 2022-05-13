@@ -10,12 +10,12 @@
 
 #import <UIKit/UIKit.h>
 #import "DetailsViewModelDelegate.h"
-#import "SMRecepies.h"
+#import "SMRecepiesContainer.h"
 
 @interface DetailsViewModel : NSObject
 
 @property (weak, nonatomic, nullable) id<DetailsViewModelDelegate> delegate;
-@property (strong, nonatomic, nullable) SMRecepies *recepies;
+@property (strong, nonatomic, nullable) SMRecepiesContainer *recepies;
 
 - (void)downloadImage:(NSString *_Nonnull)urlString;
 

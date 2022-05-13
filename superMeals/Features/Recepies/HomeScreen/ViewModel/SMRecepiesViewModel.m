@@ -24,7 +24,7 @@ NSArray *urlsArray = @[
         [service call:url successHandler:^(NSData * _Nullable data) {
             if (data) {
                 NSError *error;
-                SMRecepies *recepies = [SMRecepies fromData:data error:&error];
+                SMRecepiesContainer *recepies = [SMRecepiesContainer fromData:data error:&error];
                 if (error) {
                     NSLog(@"Ops, something went spectacularly wrong while parsing data -> \n %@", error);
                     [self->_delegate onError:error];
@@ -48,7 +48,7 @@ NSArray *urlsArray = @[
     }
 }
 
-- (void)downloadMainImageFor:(SMRecepies *)recepie completionHandler:(void (^)(UIImage * _Nullable image))completionHandler {
+- (void)downloadMainImageFor:(SMRecepiesContainer *)recepie completionHandler:(void (^)(UIImage * _Nullable image))completionHandler {
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
         NSURL *url = [NSURL URLWithString:recepie.main.primaryPictureURL];
         NSData *imageData = [NSData dataWithContentsOfURL:url];

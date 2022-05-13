@@ -8,7 +8,7 @@
 #ifndef Service_h
 #define Service_h
 
-#import "SMRecepies.h"
+#import "SMRecepiesContainer.h"
 
 @interface Service : NSObject
 

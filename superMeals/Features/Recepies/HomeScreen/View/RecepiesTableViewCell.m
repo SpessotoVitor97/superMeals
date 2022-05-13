@@ -39,7 +39,7 @@
     _recepieServings.font = [UIFont boldSystemFontOfSize:15];
 }
 
-- (void)configureLabelsFor:(SMRecepies *)recepie {
+- (void)configureLabelsFor:(SMRecepiesContainer *)recepie {
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         self->_recepieStyle.text = recepie.planStyle;
         self->_recepieServings.text = recepie.planSize;
