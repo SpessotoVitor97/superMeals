@@ -16,6 +16,7 @@
 		2D004FBF281CAB3D009F29E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FBE281CAB3D009F29E7 /* main.m */; };
 		2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FFE282002A9009F29E7 /* SMRecepies.m */; };
 		2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */; };
+		2D01A8CF282ED4170025FC9C /* superMeals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D01A8CD282ED4170025FC9C /* superMeals.xcdatamodeld */; };
 		2D0D465E2824AC7C00843A13 /* DetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */; };
 		2D3E94172821647200CBA44A /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E94162821647200CBA44A /* Service.m */; };
 		2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */; };
@@ -42,6 +43,7 @@
 		2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepiesViewModel.m; sourceTree = "<group>"; };
 		2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModel.h; sourceTree = "<group>"; };
 		2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModelDelegate.h; sourceTree = "<group>"; };
+		2D01A8CE282ED4170025FC9C /* superMeals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = superMeals.xcdatamodel; sourceTree = "<group>"; };
 		2D0D465C2824AC7000843A13 /* DetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewModel.h; sourceTree = "<group>"; };
 		2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewModel.m; sourceTree = "<group>"; };
 		2D3E94152821646500CBA44A /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				2D004FC5281CAD65009F29E7 /* AppInfra */,
 				2D004FC8281CADE3009F29E7 /* Features */,
+				2D01A8D0282ED4200025FC9C /* DataBase */,
 			);
 			path = superMeals;
 			sourceTree = "<group>";
@@ -183,6 +186,14 @@
 				2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		2D01A8D0282ED4200025FC9C /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				2D01A8CD282ED4170025FC9C /* superMeals.xcdatamodeld */,
+			);
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		2D0D46602824AC9C00843A13 /* ViewModel */ = {
@@ -349,6 +360,7 @@
 				2D0D465E2824AC7C00843A13 /* DetailsViewModel.m in Sources */,
 				2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */,
 				2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */,
+				2D01A8CF282ED4170025FC9C /* superMeals.xcdatamodeld in Sources */,
 				2D004FB1281CAB3A009F29E7 /* HomeViewController.m in Sources */,
 				2D004FAB281CAB3A009F29E7 /* AppDelegate.m in Sources */,
 				2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */,
@@ -569,6 +581,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2D01A8CD282ED4170025FC9C /* superMeals.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2D01A8CE282ED4170025FC9C /* superMeals.xcdatamodel */,
+			);
+			currentVersion = 2D01A8CE282ED4170025FC9C /* superMeals.xcdatamodel */;
+			path = superMeals.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2D004F9E281CAB39009F29E7 /* Project object */;
 }

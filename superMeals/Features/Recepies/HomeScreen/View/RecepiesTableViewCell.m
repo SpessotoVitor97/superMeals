@@ -41,24 +41,10 @@
 
 - (void)configureLabelsFor:(SMRecepies *)recepie {
     dispatch_async(dispatch_get_main_queue(), ^(void) {
-//        self->_recepieImageView.image = recepieImage;
         self->_recepieStyle.text = recepie.planStyle;
         self->_recepieServings.text = recepie.planSize;
         [self->_activityIndicator stopAnimating];
     });
-    
-//    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void) {
-//        NSURL *url = [NSURL URLWithString:recepie.main.primaryPictureURL];
-//        NSData *imageData = [NSData dataWithContentsOfURL:url];
-//        UIImage *recepieImage = [UIImage imageWithData:imageData];
-//
-//        dispatch_async(dispatch_get_main_queue(), ^(void) {
-//            self->_recepieImageView.image = recepieImage;
-//            self->_recepieStyle.text = recepie.planStyle;
-//            self->_recepieServings.text = recepie.planSize;
-//            [self->_activityIndicator stopAnimating];
-//        });
-//    });
 }
 
 @end

@@ -139,22 +139,6 @@
 
 - (void)labelClicked {
     [self displayAlertWithTextField:@"How would you like us to call it?" AlertTitle:@"Looks like you are trying to rename this recepie" actionTitle:@"_rename"];
-//    UIAlertController *alert = [[UIAlertController alloc] init];
-//    alert = [self createAlertWithTitle:@"Looks like you are trying to rename this recepie" AlertMessage:@"How would you like us to call it?" actionTitle:@"_rename" actionHandler:^(UIAlertAction *action) {
-//
-//        NSArray * textFields = alert.textFields;
-//        UITextField * titleTextField = textFields[0];
-//        [self updateRecepieTitleTo:titleTextField.text];
-//    }];
-//
-//    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-//        textField.placeholder = @"New title";
-//        textField.textColor = [UIColor blackColor];
-//        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-//        textField.borderStyle = UITextBorderStyleRoundedRect;
-//    }];
-//
-//    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - ViewModel delegate's methods
@@ -166,30 +150,6 @@
 
 - (void)onError:(nonnull NSString *)errorMsg {
     [self displayErrorAlert:errorMsg AlertTitle:@"We are sorry..." actionTitle:@"Ok"];
-}
-
-//- (UIAlertController *)createAlertWithTitle:(NSString *)alertTitle AlertMessage:(NSString *)message actionTitle:(NSString *)actionTitle actionHandler:(void (^ __nullable)(UIAlertAction *action))handler {
-//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle
-//                                                                             message:message
-//                                                                      preferredStyle:UIAlertControllerStyleAlert];
-//
-//    UIAlertAction *action = [UIAlertAction actionWithTitle:actionTitle
-//                                                       style:UIAlertActionStyleDefault
-//                                                     handler:handler];
-//    [alertController addAction:action];
-//    return alertController;
-//}
-
-- (void)displayErrorAlert:(NSString *)message AlertTitle:(NSString *)alertTitle actionTitle:(NSString *)actionTitle {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle
-                                                                             message:message
-                                                                      preferredStyle:UIAlertControllerStyleAlert];
-
-    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:actionTitle
-                                                       style:UIAlertActionStyleDefault
-                                                     handler:nil];
-    [alertController addAction:actionOk];
-    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)displayAlertWithTextField:(NSString *)message AlertTitle:(NSString *)alertTitle actionTitle:(NSString *)actionTitle {
@@ -213,7 +173,21 @@
         NSLog(@"%@", titleTextField.text);
         [self updateRecepieTitleTo:titleTextField.text];
     }];
+    
     [alertController addAction:action];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)displayErrorAlert:(NSString *)message AlertTitle:(NSString *)alertTitle actionTitle:(NSString *)actionTitle {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:actionTitle
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    
+    [alertController addAction:actionOk];
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
