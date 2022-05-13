@@ -79,7 +79,7 @@
 }
 
 - (void)configureUI {
-    SMRecepiesContainer *recepies = _viewModel.recepies;
+    SMRecepies *recepies = _viewModel.recepies;
     long totalTime = recepies.main.prepTime + recepies.main.cookTime;
     
     [_viewModel downloadImage:recepies.main.primaryPictureURL];
@@ -138,7 +138,7 @@
 }
 
 - (void)labelClicked {
-    [self displayAlertWithTextField:@"How would you like us to call it?" AlertTitle:@"Looks like you are trying to rename this recepie" actionTitle:@"_rename"];
+    [self displayAlertTextFieldWithTitle:@"Looks like you are trying to rename this recepie" message:@"How would you like us to call it?" actionTitle:@"rename_"];
 }
 
 #pragma mark - ViewModel delegate's methods
@@ -152,7 +152,7 @@
     [self displayErrorAlert:errorMsg AlertTitle:@"We are sorry..." actionTitle:@"Ok"];
 }
 
-- (void)displayAlertWithTextField:(NSString *)message AlertTitle:(NSString *)alertTitle actionTitle:(NSString *)actionTitle {
+- (void)displayAlertTextFieldWithTitle:(NSString *)alertTitle message:(NSString *)message actionTitle:(NSString *)actionTitle {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];

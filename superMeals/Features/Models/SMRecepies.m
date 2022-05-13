@@ -5,7 +5,7 @@
 //  Created by Vitor Spessoto on 02/05/22.
 //
 
-#import "SMRecepiesContainer.h"
+#import "SMRecepies.h"
 
 // Shorthand for simple blocks
 #define λ(decl, expr) (^(decl) { return (expr); })
@@ -19,27 +19,27 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Private model interfaces
 
-@interface SMRecepiesContainer (JSONConversion)
+@interface SMRecepies (JSONConversion)
 + (instancetype)fromJSONDictionary:(NSDictionary *)dict;
 - (NSDictionary *)JSONDictionary;
 @end
 
-@interface SMItemContainer (JSONConversion)
+@interface SMItem (JSONConversion)
 + (instancetype)fromJSONDictionary:(NSDictionary *)dict;
 - (NSDictionary *)JSONDictionary;
 @end
 
-@interface SMSubItemContainer (JSONConversion)
+@interface SMSubItem (JSONConversion)
 + (instancetype)fromJSONDictionary:(NSDictionary *)dict;
 - (NSDictionary *)JSONDictionary;
 @end
 
-@interface SMMainContainer (JSONConversion)
+@interface SMMain (JSONConversion)
 + (instancetype)fromJSONDictionary:(NSDictionary *)dict;
 - (NSDictionary *)JSONDictionary;
 @end
 
-@interface SMNutritionalInformationContainer (JSONConversion)
+@interface SMNutritionalInformation (JSONConversion)
 + (instancetype)fromJSONDictionary:(NSDictionary *)dict;
 - (NSDictionary *)JSONDictionary;
 @end
@@ -47,60 +47,67 @@ NS_ASSUME_NONNULL_BEGIN
 // These enum-like reference types are needed so that enum
 // values can be contained by NSArray and NSDictionary.
 
-@implementation SMQuantityFractionContainer
-+ (NSDictionary<NSString *, SMQuantityFractionContainer *> *)values
-{
-    static NSDictionary<NSString *, SMQuantityFractionContainer *> *values;
+@implementation SMQuantityFraction
++ (NSDictionary<NSString *, SMQuantityFraction *> *)values {
+    static NSDictionary<NSString *, SMQuantityFraction *> *values;
     return values = values ? values : @{
-        @"": [[SMQuantityFractionContainer alloc] initWithValue:@""],
-        @"1/2": [[SMQuantityFractionContainer alloc] initWithValue:@"1/2"],
+        @"": [[SMQuantityFraction alloc] initWithValue:@""],
+        @"1/2": [[SMQuantityFraction alloc] initWithValue:@"1/2"],
     };
 }
 
-+ (SMQuantityFractionContainer *)empty { return SMQuantityFractionContainer.values[@""]; }
-+ (SMQuantityFractionContainer *)the12 { return SMQuantityFractionContainer.values[@"1/2"]; }
++ (SMQuantityFraction *)empty { return SMQuantityFraction.values[@""]; }
++ (SMQuantityFraction *)the12 { return SMQuantityFraction.values[@"1/2"]; }
 
-+ (instancetype _Nullable)withValue:(NSString *)value
-{
-    return SMQuantityFractionContainer.values[value];
++ (instancetype _Nullable)withValue:(NSString *)value {
+    return SMQuantityFraction.values[value];
 }
 
-- (instancetype)initWithValue:(NSString *)value
-{
+- (instancetype)initWithValue:(NSString *)value {
     if (self = [super init]) _value = value;
     return self;
 }
 
-- (NSUInteger)hash { return _value.hash; }
+- (NSUInteger)hash {
+    return _value.hash;
+}
+
 @end
 
-@implementation SMUnitContainer
-+ (NSDictionary<NSString *, SMUnitContainer *> *)values
-{
-    static NSDictionary<NSString *, SMUnitContainer *> *values;
+@implementation SMUnit
++ (NSDictionary<NSString *, SMUnit *> *)values {
+    static NSDictionary<NSString *, SMUnit *> *values;
     return values = values ? values : @{
-        @"": [[SMUnitContainer alloc] initWithValue:@""],
-        @"g": [[SMUnitContainer alloc] initWithValue:@"g"],
-        @"mg": [[SMUnitContainer alloc] initWithValue:@"mg"],
+        @"": [[SMUnit alloc] initWithValue:@""],
+        @"g": [[SMUnit alloc] initWithValue:@"g"],
+        @"mg": [[SMUnit alloc] initWithValue:@"mg"],
     };
 }
 
-+ (SMUnitContainer *)empty { return SMUnitContainer.values[@""]; }
-+ (SMUnitContainer *)g { return SMUnitContainer.values[@"g"]; }
-+ (SMUnitContainer *)mg { return SMUnitContainer.values[@"mg"]; }
-
-+ (instancetype _Nullable)withValue:(NSString *)value
-{
-    return SMUnitContainer.values[value];
++ (SMUnit *)empty {
+    return SMUnit.values[@""];
 }
 
-- (instancetype)initWithValue:(NSString *)value
-{
++ (SMUnit *)g {
+    return SMUnit.values[@"g"];
+}
++ (SMUnit *)mg {
+    return SMUnit.values[@"mg"];
+}
+
++ (instancetype _Nullable)withValue:(NSString *)value {
+    return SMUnit.values[value];
+}
+
+- (instancetype)initWithValue:(NSString *)value {
     if (self = [super init]) _value = value;
     return self;
 }
 
-- (NSUInteger)hash { return _value.hash; }
+- (NSUInteger)hash {
+    return _value.hash;
+}
+
 @end
 
 static id map(id collection, id (^f)(id value)) {
@@ -117,24 +124,21 @@ static id map(id collection, id (^f)(id value)) {
 
 #pragma mark - JSON serialization
 
-SMRecepiesContainer *_Nullable SMRecepiesFromData(NSData *data, NSError **error)
-{
+SMRecepies *_Nullable SMRecepiesFromData(NSData *data, NSError **error) {
     @try {
         id json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:error];
-        return *error ? nil : [SMRecepiesContainer fromJSONDictionary:json];
+        return *error ? nil : [SMRecepies fromJSONDictionary:json];
     } @catch (NSException *exception) {
         *error = [NSError errorWithDomain:@"JSONSerialization" code:-1 userInfo:@{ @"exception": exception }];
         return nil;
     }
 }
 
-SMRecepiesContainer *_Nullable SMRecepiesFromJSON(NSString *json, NSStringEncoding encoding, NSError **error)
-{
+SMRecepies *_Nullable SMRecepiesFromJSON(NSString *json, NSStringEncoding encoding, NSError **error) {
     return SMRecepiesFromData([json dataUsingEncoding:encoding], error);
 }
 
-NSData *_Nullable SMRecepiesToData(SMRecepiesContainer *recepies, NSError **error)
-{
+NSData *_Nullable SMRecepiesToData(SMRecepies *recepies, NSError **error) {
     @try {
         id json = [recepies JSONDictionary];
         NSData *data = [NSJSONSerialization dataWithJSONObject:json options:kNilOptions error:error];
@@ -145,15 +149,13 @@ NSData *_Nullable SMRecepiesToData(SMRecepiesContainer *recepies, NSError **erro
     }
 }
 
-NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEncoding encoding, NSError **error)
-{
+NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding encoding, NSError **error) {
     NSData *data = SMRecepiesToData(recepies, error);
     return data ? [[NSString alloc] initWithData:data encoding:encoding] : nil;
 }
 
-@implementation SMRecepiesContainer
-+ (NSDictionary<NSString *, NSString *> *)properties
-{
+@implementation SMRecepies
++ (NSDictionary<NSString *, NSString *> *)properties {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
         @"id": @"identifier",
@@ -169,51 +171,44 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEnco
     };
 }
 
-+ (_Nullable instancetype)fromData:(NSData *)data error:(NSError *_Nullable *)error
-{
++ (_Nullable instancetype)fromData:(NSData *)data error:(NSError *_Nullable *)error {
     return SMRecepiesFromData(data, error);
 }
 
-+ (_Nullable instancetype)fromJSON:(NSString *)json encoding:(NSStringEncoding)encoding error:(NSError *_Nullable *)error
-{
++ (_Nullable instancetype)fromJSON:(NSString *)json encoding:(NSStringEncoding)encoding error:(NSError *_Nullable *)error {
     return SMRecepiesFromJSON(json, encoding, error);
 }
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict
-{
-    return dict ? [[SMRecepiesContainer alloc] initWithJSONDictionary:dict] : nil;
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict {
+    return dict ? [[SMRecepies alloc] initWithJSONDictionary:dict] : nil;
 }
 
-- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
-        _main = [SMMainContainer fromJSONDictionary:(id)_main];
-        _side = [SMMainContainer fromJSONDictionary:(id)_side];
-        _items = map(_items, λ(id x, [SMItemContainer fromJSONDictionary:x]));
+        _main = [SMMain fromJSONDictionary:(id)_main];
+        _side = [SMMain fromJSONDictionary:(id)_side];
+        _items = map(_items, λ(id x, [SMItem fromJSONDictionary:x]));
     }
     return self;
 }
 
-- (void)setValue:(nullable id)value forKey:(NSString *)key
-{
-    id resolved = SMRecepiesContainer.properties[key];
+- (void)setValue:(nullable id)value forKey:(NSString *)key {
+    id resolved = SMRecepies.properties[key];
     if (resolved) [super setValue:value forKey:resolved];
 }
 
-- (void)setNilValueForKey:(NSString *)key
-{
-    id resolved = SMRecepiesContainer.properties[key];
+- (void)setNilValueForKey:(NSString *)key {
+    id resolved = SMRecepies.properties[key];
     if (resolved) [super setValue:@(0) forKey:resolved];
 }
 
-- (NSDictionary *)JSONDictionary
-{
-    id dict = [[self dictionaryWithValuesForKeys:SMRecepiesContainer.properties.allValues] mutableCopy];
+- (NSDictionary *)JSONDictionary {
+    id dict = [[self dictionaryWithValuesForKeys:SMRecepies.properties.allValues] mutableCopy];
 
     // Rewrite property names that differ in JSON
-    for (id jsonName in SMRecepiesContainer.properties) {
-        id propertyName = SMRecepiesContainer.properties[jsonName];
+    for (id jsonName in SMRecepies.properties) {
+        id propertyName = SMRecepies.properties[jsonName];
         if (![jsonName isEqualToString:propertyName]) {
             dict[jsonName] = dict[propertyName];
             [dict removeObjectForKey:propertyName];
@@ -230,20 +225,17 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEnco
     return dict;
 }
 
-- (NSData *_Nullable)toData:(NSError *_Nullable *)error
-{
+- (NSData *_Nullable)toData:(NSError *_Nullable *)error {
     return SMRecepiesToData(self, error);
 }
 
-- (NSString *_Nullable)toJSON:(NSStringEncoding)encoding error:(NSError *_Nullable *)error
-{
+- (NSString *_Nullable)toJSON:(NSStringEncoding)encoding error:(NSError *_Nullable *)error {
     return SMRecepiesToJSON(self, encoding, error);
 }
 @end
 
-@implementation SMItemContainer
-+ (NSDictionary<NSString *, NSString *> *)properties
-{
+@implementation SMItem
++ (NSDictionary<NSString *, NSString *> *)properties {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
         @"id": @"identifier",
@@ -269,40 +261,35 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEnco
     };
 }
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict
-{
-    return dict ? [[SMItemContainer alloc] initWithJSONDictionary:dict] : nil;
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict {
+    return dict ? [[SMItem alloc] initWithJSONDictionary:dict] : nil;
 }
 
-- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
-        _quantityFraction = [SMQuantityFractionContainer withValue:(id)_quantityFraction];
-        _subItems = map(_subItems, λ(id x, [SMSubItemContainer fromJSONDictionary:x]));
+        _quantityFraction = [SMQuantityFraction withValue:(id)_quantityFraction];
+        _subItems = map(_subItems, λ(id x, [SMSubItem fromJSONDictionary:x]));
     }
     return self;
 }
 
-- (void)setValue:(nullable id)value forKey:(NSString *)key
-{
-    id resolved = SMItemContainer.properties[key];
+- (void)setValue:(nullable id)value forKey:(NSString *)key {
+    id resolved = SMItem.properties[key];
     if (resolved) [super setValue:value forKey:resolved];
 }
 
-- (void)setNilValueForKey:(NSString *)key
-{
-    id resolved = SMItemContainer.properties[key];
+- (void)setNilValueForKey:(NSString *)key {
+    id resolved = SMItem.properties[key];
     if (resolved) [super setValue:@(0) forKey:resolved];
 }
 
-- (NSDictionary *)JSONDictionary
-{
-    id dict = [[self dictionaryWithValuesForKeys:SMItemContainer.properties.allValues] mutableCopy];
+- (NSDictionary *)JSONDictionary {
+    id dict = [[self dictionaryWithValuesForKeys:SMItem.properties.allValues] mutableCopy];
 
     // Rewrite property names that differ in JSON
-    for (id jsonName in SMItemContainer.properties) {
-        id propertyName = SMItemContainer.properties[jsonName];
+    for (id jsonName in SMItem.properties) {
+        id propertyName = SMItem.properties[jsonName];
         if (![jsonName isEqualToString:propertyName]) {
             dict[jsonName] = dict[propertyName];
             [dict removeObjectForKey:propertyName];
@@ -320,9 +307,8 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEnco
 }
 @end
 
-@implementation SMSubItemContainer
-+ (NSDictionary<NSString *, NSString *> *)properties
-{
+@implementation SMSubItem
++ (NSDictionary<NSString *, NSString *> *)properties {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
         @"id": @"identifier",
@@ -343,39 +329,34 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEnco
     };
 }
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict
-{
-    return dict ? [[SMSubItemContainer alloc] initWithJSONDictionary:dict] : nil;
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict {
+    return dict ? [[SMSubItem alloc] initWithJSONDictionary:dict] : nil;
 }
 
-- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
-        _quantityFraction = [SMQuantityFractionContainer withValue:(id)_quantityFraction];
+        _quantityFraction = [SMQuantityFraction withValue:(id)_quantityFraction];
     }
     return self;
 }
 
-- (void)setValue:(nullable id)value forKey:(NSString *)key
-{
-    id resolved = SMSubItemContainer.properties[key];
+- (void)setValue:(nullable id)value forKey:(NSString *)key {
+    id resolved = SMSubItem.properties[key];
     if (resolved) [super setValue:value forKey:resolved];
 }
 
-- (void)setNilValueForKey:(NSString *)key
-{
-    id resolved = SMSubItemContainer.properties[key];
+- (void)setNilValueForKey:(NSString *)key {
+    id resolved = SMSubItem.properties[key];
     if (resolved) [super setValue:@(0) forKey:resolved];
 }
 
-- (NSDictionary *)JSONDictionary
-{
-    id dict = [[self dictionaryWithValuesForKeys:SMSubItemContainer.properties.allValues] mutableCopy];
+- (NSDictionary *)JSONDictionary {
+    id dict = [[self dictionaryWithValuesForKeys:SMSubItem.properties.allValues] mutableCopy];
 
     // Rewrite property names that differ in JSON
-    for (id jsonName in SMSubItemContainer.properties) {
-        id propertyName = SMSubItemContainer.properties[jsonName];
+    for (id jsonName in SMSubItem.properties) {
+        id propertyName = SMSubItem.properties[jsonName];
         if (![jsonName isEqualToString:propertyName]) {
             dict[jsonName] = dict[propertyName];
             [dict removeObjectForKey:propertyName];
@@ -390,11 +371,11 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEnco
 
     return dict;
 }
+
 @end
 
-@implementation SMMainContainer
-+ (NSDictionary<NSString *, NSString *> *)properties
-{
+@implementation SMMain
++ (NSDictionary<NSString *, NSString *> *)properties {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
         @"title": @"title",
@@ -419,39 +400,34 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEnco
     };
 }
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict
-{
-    return dict ? [[SMMainContainer alloc] initWithJSONDictionary:dict] : nil;
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict {
+    return dict ? [[SMMain alloc] initWithJSONDictionary:dict] : nil;
 }
 
-- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
-        _nutritionalInformation = map(_nutritionalInformation, λ(id x, [SMNutritionalInformationContainer fromJSONDictionary:x]));
+        _nutritionalInformation = map(_nutritionalInformation, λ(id x, [SMNutritionalInformation fromJSONDictionary:x]));
     }
     return self;
 }
 
-- (void)setValue:(nullable id)value forKey:(NSString *)key
-{
-    id resolved = SMMainContainer.properties[key];
+- (void)setValue:(nullable id)value forKey:(NSString *)key {
+    id resolved = SMMain.properties[key];
     if (resolved) [super setValue:value forKey:resolved];
 }
 
-- (void)setNilValueForKey:(NSString *)key
-{
-    id resolved = SMMainContainer.properties[key];
+- (void)setNilValueForKey:(NSString *)key {
+    id resolved = SMMain.properties[key];
     if (resolved) [super setValue:@(0) forKey:resolved];
 }
 
-- (NSDictionary *)JSONDictionary
-{
-    id dict = [[self dictionaryWithValuesForKeys:SMMainContainer.properties.allValues] mutableCopy];
+- (NSDictionary *)JSONDictionary {
+    id dict = [[self dictionaryWithValuesForKeys:SMMain.properties.allValues] mutableCopy];
 
     // Rewrite property names that differ in JSON
-    for (id jsonName in SMMainContainer.properties) {
-        id propertyName = SMMainContainer.properties[jsonName];
+    for (id jsonName in SMMain.properties) {
+        id propertyName = SMMain.properties[jsonName];
         if (![jsonName isEqualToString:propertyName]) {
             dict[jsonName] = dict[propertyName];
             [dict removeObjectForKey:propertyName];
@@ -468,9 +444,8 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEnco
 }
 @end
 
-@implementation SMNutritionalInformationContainer
-+ (NSDictionary<NSString *, NSString *> *)properties
-{
+@implementation SMNutritionalInformation
++ (NSDictionary<NSString *, NSString *> *)properties {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
         @"name": @"name",
@@ -483,39 +458,34 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEnco
     };
 }
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict
-{
-    return dict ? [[SMNutritionalInformationContainer alloc] initWithJSONDictionary:dict] : nil;
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict {
+    return dict ? [[SMNutritionalInformation alloc] initWithJSONDictionary:dict] : nil;
 }
 
-- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
-        _unit = [SMUnitContainer withValue:(id)_unit];
+        _unit = [SMUnit withValue:(id)_unit];
     }
     return self;
 }
 
-- (void)setValue:(nullable id)value forKey:(NSString *)key
-{
-    id resolved = SMNutritionalInformationContainer.properties[key];
+- (void)setValue:(nullable id)value forKey:(NSString *)key {
+    id resolved = SMNutritionalInformation.properties[key];
     if (resolved) [super setValue:value forKey:resolved];
 }
 
-- (void)setNilValueForKey:(NSString *)key
-{
-    id resolved = SMNutritionalInformationContainer.properties[key];
+- (void)setNilValueForKey:(NSString *)key {
+    id resolved = SMNutritionalInformation.properties[key];
     if (resolved) [super setValue:@(0) forKey:resolved];
 }
 
-- (NSDictionary *)JSONDictionary
-{
-    id dict = [[self dictionaryWithValuesForKeys:SMNutritionalInformationContainer.properties.allValues] mutableCopy];
+- (NSDictionary *)JSONDictionary {
+    id dict = [[self dictionaryWithValuesForKeys:SMNutritionalInformation.properties.allValues] mutableCopy];
 
     // Rewrite property names that differ in JSON
-    for (id jsonName in SMNutritionalInformationContainer.properties) {
-        id propertyName = SMNutritionalInformationContainer.properties[jsonName];
+    for (id jsonName in SMNutritionalInformation.properties) {
+        id propertyName = SMNutritionalInformation.properties[jsonName];
         if (![jsonName isEqualToString:propertyName]) {
             dict[jsonName] = dict[propertyName];
             [dict removeObjectForKey:propertyName];
@@ -531,6 +501,7 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepiesContainer *recepies, NSStringEnco
 
     return dict;
 }
+
 @end
 
 NS_ASSUME_NONNULL_END

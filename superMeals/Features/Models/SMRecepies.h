@@ -7,40 +7,40 @@
 
 #import <Foundation/Foundation.h>
 
-@class SMRecepiesContainer;
-@class SMItemContainer;
-@class SMQuantityFractionContainer;
-@class SMSubItemContainer;
-@class SMMainContainer;
-@class SMNutritionalInformationContainer;
-@class SMUnitContainer;
+@class SMRecepies;
+@class SMItem;
+@class SMQuantityFraction;
+@class SMSubItem;
+@class SMMain;
+@class SMNutritionalInformation;
+@class SMUnit;
 
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Boxed enums
 
-@interface SMQuantityFractionContainer : NSObject
+@interface SMQuantityFraction : NSObject
 @property (nonatomic, readonly, copy) NSString *value;
 + (instancetype _Nullable)withValue:(NSString *)value;
-+ (SMQuantityFractionContainer *)empty;
-+ (SMQuantityFractionContainer *)the12;
++ (SMQuantityFraction *)empty;
++ (SMQuantityFraction *)the12;
 @end
 
-@interface SMUnitContainer : NSObject
+@interface SMUnit : NSObject
 @property (nonatomic, readonly, copy) NSString *value;
 + (instancetype _Nullable)withValue:(NSString *)value;
-+ (SMUnitContainer *)empty;
-+ (SMUnitContainer *)g;
-+ (SMUnitContainer *)mg;
++ (SMUnit *)empty;
++ (SMUnit *)g;
++ (SMUnit *)mg;
 @end
 
 #pragma mark - Object interfaces
 
-@interface SMRecepiesContainer : NSObject
+@interface SMRecepies : NSObject
 @property (nonatomic, assign) NSInteger identifier;
-@property (nonatomic, strong) SMMainContainer *main;
-@property (nonatomic, strong) SMMainContainer *side;
-@property (nonatomic, copy)   NSArray<SMItemContainer *> *items;
+@property (nonatomic, strong) SMMain *main;
+@property (nonatomic, strong) SMMain *side;
+@property (nonatomic, copy)   NSArray<SMItem *> *items;
 @property (nonatomic, copy)   NSString *planSize;
 @property (nonatomic, copy)   NSString *planStyle;
 @property (nonatomic, assign) NSInteger planStyleID;
@@ -54,7 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSData *_Nullable)toData:(NSError *_Nullable *)error;
 @end
 
-@interface SMItemContainer : NSObject
+@interface SMItem : NSObject
 @property (nonatomic, assign)           NSInteger identifier;
 @property (nonatomic, copy)             NSString *mealNumbers;
 @property (nonatomic, copy)             NSString *name;
@@ -65,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, copy)   id price;
 @property (nonatomic, assign)           double quantity;
 @property (nonatomic, assign)           NSInteger quantityNumber;
-@property (nonatomic, assign)           SMQuantityFractionContainer *quantityFraction;
+@property (nonatomic, assign)           SMQuantityFraction *quantityFraction;
 @property (nonatomic, copy)             NSString *parsedName;
 @property (nonatomic, nullable, copy)   NSString *size;
 @property (nonatomic, nullable, copy)   NSString *sizeUnits;
@@ -74,10 +74,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, copy)   NSString *unitsPlural;
 @property (nonatomic, nullable, copy)   id needs;
 @property (nonatomic, copy)             NSString *storeBrandName;
-@property (nonatomic, copy)             NSArray<SMSubItemContainer *> *subItems;
+@property (nonatomic, copy)             NSArray<SMSubItem *> *subItems;
 @end
 
-@interface SMSubItemContainer : NSObject
+@interface SMSubItem : NSObject
 @property (nonatomic, assign)         NSInteger identifier;
 @property (nonatomic, assign)         NSInteger mealNumber;
 @property (nonatomic, copy)           NSString *name;
@@ -86,7 +86,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, copy) id price;
 @property (nonatomic, assign)         double quantity;
 @property (nonatomic, assign)         NSInteger quantityNumber;
-@property (nonatomic, assign)         SMQuantityFractionContainer *quantityFraction;
+@property (nonatomic, assign)         SMQuantityFraction *quantityFraction;
 @property (nonatomic, nullable, copy) NSString *size;
 @property (nonatomic, nullable, copy) NSString *sizeUnits;
 @property (nonatomic, nullable, copy) NSString *units;
@@ -95,11 +95,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, copy) id needs;
 @end
 
-@interface SMMainContainer : NSObject
+@interface SMMain : NSObject
 @property (nonatomic, copy)           NSString *title;
 @property (nonatomic, assign)         NSInteger calories;
 @property (nonatomic, assign)         NSInteger servings;
-@property (nonatomic, copy)           NSArray<SMNutritionalInformationContainer *> *nutritionalInformation;
+@property (nonatomic, copy)           NSArray<SMNutritionalInformation *> *nutritionalInformation;
 @property (nonatomic, copy)           NSDictionary<NSString *, NSString *> *ingredients;
 @property (nonatomic, copy)           NSDictionary<NSString *, NSString *> *instructions;
 @property (nonatomic, copy)           NSString *notes;
@@ -117,10 +117,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable, copy) NSString *primaryPictureURLMedium;
 @end
 
-@interface SMNutritionalInformationContainer : NSObject
+@interface SMNutritionalInformation : NSObject
 @property (nonatomic, copy)   NSString *name;
 @property (nonatomic, copy)   NSString *nameWithoutUnit;
-@property (nonatomic, assign) SMUnitContainer *unit;
+@property (nonatomic, assign) SMUnit *unit;
 @property (nonatomic, assign) NSInteger value;
 @property (nonatomic, assign) NSInteger order;
 @property (nonatomic, assign) BOOL isShouldCombine;

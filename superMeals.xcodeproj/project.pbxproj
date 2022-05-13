@@ -15,12 +15,12 @@
 		2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */; };
 		2D004FBF281CAB3D009F29E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FBE281CAB3D009F29E7 /* main.m */; };
 		2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */; };
-		2D01A8CF282ED4170025FC9C /* superMeals.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D01A8CD282ED4170025FC9C /* superMeals.xcdatamodeld */; };
-		2D01A8D3282EE64F0025FC9C /* SMRecepiesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D01A8D2282EE64F0025FC9C /* SMRecepiesContainer.m */; };
+		2D01A8D3282EE64F0025FC9C /* SMRecepies.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D01A8D2282EE64F0025FC9C /* SMRecepies.m */; };
 		2D0D465E2824AC7C00843A13 /* DetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */; };
 		2D3E94172821647200CBA44A /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E94162821647200CBA44A /* Service.m */; };
 		2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */; };
 		2D98E9002823697A00DE0CE5 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D98E8FE2823697900DE0CE5 /* DetailsViewController.xib */; };
+		2D9CBF6F282EEEF5005DC810 /* DataFile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D9CBF6E282EEEF5005DC810 /* DataFile.txt */; };
 		2DA6DC2C2821A46500DD7DB6 /* RecepiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */; };
 		2DA6DC2D2821A46500DD7DB6 /* RecepiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -41,9 +41,8 @@
 		2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepiesViewModel.m; sourceTree = "<group>"; };
 		2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModel.h; sourceTree = "<group>"; };
 		2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModelDelegate.h; sourceTree = "<group>"; };
-		2D01A8CE282ED4170025FC9C /* superMeals.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = superMeals.xcdatamodel; sourceTree = "<group>"; };
-		2D01A8D1282EE64F0025FC9C /* SMRecepiesContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMRecepiesContainer.h; sourceTree = "<group>"; };
-		2D01A8D2282EE64F0025FC9C /* SMRecepiesContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMRecepiesContainer.m; sourceTree = "<group>"; };
+		2D01A8D1282EE64F0025FC9C /* SMRecepies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMRecepies.h; sourceTree = "<group>"; };
+		2D01A8D2282EE64F0025FC9C /* SMRecepies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMRecepies.m; sourceTree = "<group>"; };
 		2D0D465C2824AC7000843A13 /* DetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewModel.h; sourceTree = "<group>"; };
 		2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewModel.m; sourceTree = "<group>"; };
 		2D3E94152821646500CBA44A /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		2D98E8FC2823697900DE0CE5 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		2D98E8FE2823697900DE0CE5 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		2D9CBF6E282EEEF5005DC810 /* DataFile.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DataFile.txt; sourceTree = "<group>"; };
 		2DA6DC292821A46500DD7DB6 /* RecepiesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecepiesTableViewCell.h; sourceTree = "<group>"; };
 		2DA6DC2A2821A46500DD7DB6 /* RecepiesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecepiesTableViewCell.m; sourceTree = "<group>"; };
 		2DA6DC2B2821A46500DD7DB6 /* RecepiesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecepiesTableViewCell.xib; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		2D01A8D0282ED4200025FC9C /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				2D01A8CD282ED4170025FC9C /* superMeals.xcdatamodeld */,
+				2D9CBF6E282EEEF5005DC810 /* DataFile.txt */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -190,8 +190,8 @@
 		2D01A8D4282EE6550025FC9C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2D01A8D1282EE64F0025FC9C /* SMRecepiesContainer.h */,
-				2D01A8D2282EE64F0025FC9C /* SMRecepiesContainer.m */,
+				2D01A8D1282EE64F0025FC9C /* SMRecepies.h */,
+				2D01A8D2282EE64F0025FC9C /* SMRecepies.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -342,6 +342,7 @@
 			files = (
 				2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */,
 				2DA6DC2D2821A46500DD7DB6 /* RecepiesTableViewCell.xib in Resources */,
+				2D9CBF6F282EEEF5005DC810 /* DataFile.txt in Resources */,
 				2D98E9002823697A00DE0CE5 /* DetailsViewController.xib in Resources */,
 				2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */,
 				2D004FB4281CAB3A009F29E7 /* Main.storyboard in Resources */,
@@ -355,12 +356,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D01A8D3282EE64F0025FC9C /* SMRecepiesContainer.m in Sources */,
+				2D01A8D3282EE64F0025FC9C /* SMRecepies.m in Sources */,
 				2D004FBF281CAB3D009F29E7 /* main.m in Sources */,
 				2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */,
 				2D0D465E2824AC7C00843A13 /* DetailsViewModel.m in Sources */,
 				2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */,
-				2D01A8CF282ED4170025FC9C /* superMeals.xcdatamodeld in Sources */,
 				2D004FB1281CAB3A009F29E7 /* HomeViewController.m in Sources */,
 				2D004FAB281CAB3A009F29E7 /* AppDelegate.m in Sources */,
 				2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */,
@@ -581,19 +581,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		2D01A8CD282ED4170025FC9C /* superMeals.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				2D01A8CE282ED4170025FC9C /* superMeals.xcdatamodel */,
-			);
-			currentVersion = 2D01A8CE282ED4170025FC9C /* superMeals.xcdatamodel */;
-			path = superMeals.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 2D004F9E281CAB39009F29E7 /* Project object */;
 }

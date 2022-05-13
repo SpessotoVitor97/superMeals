@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SMRecepiesContainer.h"
+#import "SMRecepies.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *recepieServings;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
-- (void)configureLabelsFor:(SMRecepiesContainer *)recepie;
+- (void)configureLabelsFor:(SMRecepies *)recepie;
 
 @end
 

@@ -10,17 +10,17 @@
 
 #import <UIKit/UIKit.h>
 #import "SMRecepiesViewModelDelegate.h"
-#import "SMRecepiesContainer.h"
+#import "SMRecepies.h"
 #import <CoreData/CoreData.h>
 
 @interface SMRecepiesViewModel : NSObject
 
 @property (weak, nonatomic, nullable) id<SMRecepiesViewModelDelegate> delegate;
-@property (strong, nonatomic, nullable) NSMutableArray<SMRecepiesContainer*> *recepiesArray;
+@property (strong, nonatomic, nullable) NSMutableArray<SMRecepies*> *recepiesArray;
 
 - (void)fetchRecepies;
 - (NSInteger)getTotalRecepies;
-- (void)downloadMainImageFor:(SMRecepiesContainer *_Nonnull)recepie completionHandler:(void (^_Nonnull)(UIImage * _Nullable image))completionHandler;
+- (void)downloadMainImageFor:(SMRecepies *_Nonnull)recepie completionHandler:(void (^_Nonnull)(UIImage * _Nullable image))completionHandler;
 
 @end
 
