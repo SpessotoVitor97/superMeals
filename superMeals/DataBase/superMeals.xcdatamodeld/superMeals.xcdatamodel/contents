@@ -1,4 +1,94 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="SMItem" representedClassName="SMItem" syncable="YES" codeGenerationType="class">
+        <attribute name="alternateStore" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isStaple" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="mealNumbers" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="needs" optional="YES" attributeType="String"/>
+        <attribute name="parsedName" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="quantityFraction" optional="YES" attributeType="String"/>
+        <attribute name="quantityNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sale" optional="YES" attributeType="String"/>
+        <attribute name="size" optional="YES" attributeType="String"/>
+        <attribute name="sizeUnits" optional="YES" attributeType="String"/>
+        <attribute name="storeBrandName" optional="YES" attributeType="String"/>
+        <attribute name="units" optional="YES" attributeType="String"/>
+        <attribute name="unitsFriendly" optional="YES" attributeType="String"/>
+        <attribute name="unitsPlural" optional="YES" attributeType="String"/>
+        <relationship name="mainRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SMRecepies" inverseName="itemsRelationship" inverseEntity="SMRecepies"/>
+        <relationship name="subItemRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="SMSubItem" inverseName="itemRelationship" inverseEntity="SMSubItem"/>
+    </entity>
+    <entity name="SMMain" representedClassName="SMMain" syncable="YES" codeGenerationType="class">
+        <attribute name="bucket" optional="YES" attributeType="String"/>
+        <attribute name="calories" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String"/>
+        <attribute name="cookTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="ingredients" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer"/>
+        <attribute name="instructions" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer"/>
+        <attribute name="isSide" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="prepTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="primaryPicturePath" optional="YES" attributeType="String"/>
+        <attribute name="primaryPictureURL" optional="YES" attributeType="String"/>
+        <attribute name="primaryPictureURLMedium" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="servings" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="style" optional="YES" attributeType="String"/>
+        <attribute name="styleID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="nutricionalInfoRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="SMNutritionalInformation" inverseName="mainRelationship" inverseEntity="SMNutritionalInformation"/>
+        <relationship name="recepieRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SMRecepies" inverseName="mainRelationship" inverseEntity="SMRecepies"/>
+    </entity>
+    <entity name="SMNutritionalInformation" representedClassName="SMNutritionalInformation" syncable="YES" codeGenerationType="class">
+        <attribute name="isFocus" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isShouldCombine" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="nameWithoutUnit" optional="YES" attributeType="String"/>
+        <attribute name="order" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="unit" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="mainRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SMMain" inverseName="nutricionalInfoRelationship" inverseEntity="SMMain"/>
+    </entity>
+    <entity name="SMRecepies" representedClassName="SMRecepies" syncable="YES" codeGenerationType="class">
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="planMobileTitle" optional="YES" attributeType="String"/>
+        <attribute name="planSize" optional="YES" attributeType="String"/>
+        <attribute name="planStyle" optional="YES" attributeType="String"/>
+        <attribute name="planStyleID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="planTitle" optional="YES" attributeType="String"/>
+        <attribute name="planTitleWithoutSize" optional="YES" attributeType="String"/>
+        <relationship name="itemsRelationship" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="SMItem" inverseName="mainRelationship" inverseEntity="SMItem"/>
+        <relationship name="mainRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SMMain" inverseName="recepieRelationship" inverseEntity="SMMain"/>
+    </entity>
+    <entity name="SMSubItem" representedClassName="SMSubItem" syncable="YES" codeGenerationType="class">
+        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isSide" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="mealNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="needs" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="quantity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="quantityFraction" optional="YES" attributeType="String"/>
+        <attribute name="quantityNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sale" optional="YES" attributeType="String"/>
+        <attribute name="size" optional="YES" attributeType="String"/>
+        <attribute name="sizeUnits" optional="YES" attributeType="String"/>
+        <attribute name="units" optional="YES" attributeType="String"/>
+        <attribute name="unitsFriendly" optional="YES" attributeType="String"/>
+        <attribute name="unitsPlural" optional="YES" attributeType="String"/>
+        <relationship name="itemRelationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SMItem" inverseName="subItemRelationship" inverseEntity="SMItem"/>
+    </entity>
+    <elements>
+        <element name="SMItem" positionX="149.890625" positionY="247.34375" width="128" height="358"/>
+        <element name="SMMain" positionX="317.6171875" positionY="93.27734375" width="128" height="343"/>
+        <element name="SMNutritionalInformation" positionX="504.00390625" positionY="293.5234375" width="128" height="163"/>
+        <element name="SMRecepies" positionX="324.84375" positionY="495.546875" width="128" height="178"/>
+        <element name="SMSubItem" positionX="-11.2109375" positionY="382.734375" width="128" height="283"/>
+    </elements>
 </model>

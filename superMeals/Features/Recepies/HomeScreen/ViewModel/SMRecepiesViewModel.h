@@ -11,6 +11,7 @@
 #import <UIKit/UIKit.h>
 #import "SMRecepiesViewModelDelegate.h"
 #import "SMRecepies.h"
+#import <CoreData/CoreData.h>
 
 @interface SMRecepiesViewModel : NSObject
 

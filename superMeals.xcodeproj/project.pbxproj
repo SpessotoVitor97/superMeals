@@ -14,8 +14,8 @@
 		2D004FB9281CAB3D009F29E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FB8281CAB3D009F29E7 /* Assets.xcassets */; };
 		2D004FBC281CAB3D009F29E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D004FBA281CAB3D009F29E7 /* LaunchScreen.storyboard */; };
 		2D004FBF281CAB3D009F29E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FBE281CAB3D009F29E7 /* main.m */; };
-		2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D004FFE282002A9009F29E7 /* SMRecepies.m */; };
 		2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */; };
+		2D01A8D3282EE64F0025FC9C /* SMRecepies.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D01A8D2282EE64F0025FC9C /* SMRecepies.m */; };
 		2D0D465E2824AC7C00843A13 /* DetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */; };
 		2D3E94172821647200CBA44A /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D3E94162821647200CBA44A /* Service.m */; };
 		2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98E8FD2823697900DE0CE5 /* DetailsViewController.m */; };
@@ -37,11 +37,11 @@
 		2D004FBB281CAB3D009F29E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D004FBD281CAB3D009F29E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D004FBE281CAB3D009F29E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2D004FFD28200294009F29E7 /* SMRecepies.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepies.h; sourceTree = "<group>"; };
-		2D004FFE282002A9009F29E7 /* SMRecepies.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepies.m; sourceTree = "<group>"; };
 		2D005001282017BA009F29E7 /* SMRecepiesViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMRecepiesViewModel.m; sourceTree = "<group>"; };
 		2D005003282017CE009F29E7 /* SMRecepiesViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModel.h; sourceTree = "<group>"; };
 		2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMRecepiesViewModelDelegate.h; sourceTree = "<group>"; };
+		2D01A8D1282EE64F0025FC9C /* SMRecepies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMRecepies.h; sourceTree = "<group>"; };
+		2D01A8D2282EE64F0025FC9C /* SMRecepies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMRecepies.m; sourceTree = "<group>"; };
 		2D0D465C2824AC7000843A13 /* DetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewModel.h; sourceTree = "<group>"; };
 		2D0D465D2824AC7C00843A13 /* DetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewModel.m; sourceTree = "<group>"; };
 		2D3E94152821646500CBA44A /* Service.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Service.h; sourceTree = "<group>"; };
@@ -125,6 +125,7 @@
 		2D004FC8281CADE3009F29E7 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				2D01A8D4282EE6550025FC9C /* Models */,
 				2D004FCB281DC6DC009F29E7 /* Networking */,
 				2D004FDE281DCCD7009F29E7 /* Recepies */,
 			);
@@ -134,7 +135,6 @@
 		2D004FCB281DC6DC009F29E7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				2D005000282002AF009F29E7 /* Model */,
 				2D98E90428236A2200DE0CE5 /* Service */,
 			);
 			path = Networking;
@@ -147,15 +147,6 @@
 				2D98E8FB2823695700DE0CE5 /* DetailsScreen */,
 			);
 			path = Recepies;
-			sourceTree = "<group>";
-		};
-		2D005000282002AF009F29E7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2D004FFD28200294009F29E7 /* SMRecepies.h */,
-				2D004FFE282002A9009F29E7 /* SMRecepies.m */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		2D005004282017D4009F29E7 /* ViewModel */ = {
@@ -183,6 +174,15 @@
 				2D0050062820180E009F29E7 /* SMRecepiesViewModelDelegate.h */,
 			);
 			path = Delegates;
+			sourceTree = "<group>";
+		};
+		2D01A8D4282EE6550025FC9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2D01A8D1282EE64F0025FC9C /* SMRecepies.h */,
+				2D01A8D2282EE64F0025FC9C /* SMRecepies.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2D0D46602824AC9C00843A13 /* ViewModel */ = {
@@ -344,11 +344,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D01A8D3282EE64F0025FC9C /* SMRecepies.m in Sources */,
 				2D004FBF281CAB3D009F29E7 /* main.m in Sources */,
 				2D98E8FF2823697A00DE0CE5 /* DetailsViewController.m in Sources */,
 				2D0D465E2824AC7C00843A13 /* DetailsViewModel.m in Sources */,
 				2D005002282017BA009F29E7 /* SMRecepiesViewModel.m in Sources */,
-				2D004FFF282002A9009F29E7 /* SMRecepies.m in Sources */,
 				2D004FB1281CAB3A009F29E7 /* HomeViewController.m in Sources */,
 				2D004FAB281CAB3A009F29E7 /* AppDelegate.m in Sources */,
 				2D004FAE281CAB3A009F29E7 /* SceneDelegate.m in Sources */,
