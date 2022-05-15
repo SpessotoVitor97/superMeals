@@ -16,7 +16,6 @@
 
 @property (weak, nonatomic, nullable) id<DetailsViewModelDelegate> delegate;
 @property (strong, nonatomic, nullable) SMRecepies *recepies;
-//@property (strong, nonatomic, nullable) UIImage *image;
 
 - (void)downloadImage:(NSString *_Nonnull)urlString;
 

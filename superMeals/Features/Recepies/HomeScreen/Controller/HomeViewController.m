@@ -72,18 +72,18 @@ NSString *kRecepiesCellRestorationID = @"RecepiesCell";
 
 - (void)onError:(NSError *)error {
     NSLog(@"%@", error);
-    [self displayAlert:error];
+    [self displayErrorAlert:error.localizedDescription AlertTitle:@"We are sorry..." actionTitle:@"Ok"];
 }
 
-- (void)displayAlert:(NSError * _Nonnull)error {
-    NSString *message = [NSString stringWithFormat:@"%@", error.localizedDescription];
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"We are sorry..."
+- (void)displayErrorAlert:(NSString *)message AlertTitle:(NSString *)alertTitle actionTitle:(NSString *)actionTitle {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:alertTitle
                                                                              message:message
                                                                       preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:@"Ok"
+
+    UIAlertAction *actionOk = [UIAlertAction actionWithTitle:actionTitle
                                                        style:UIAlertActionStyleDefault
                                                      handler:nil];
+    
     [alertController addAction:actionOk];
     [self presentViewController:alertController animated:YES completion:nil];
 }

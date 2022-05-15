@@ -25,6 +25,7 @@ NSArray *urlsArray = @[
             if (data) {
                 NSError *error;
                 SMRecepies *recepies = [SMRecepies fromData:data error:&error];
+                
                 if (error) {
                     NSLog(@"Ops, something went spectacularly wrong while parsing data -> \n %@", error);
                     [self->_delegate onError:error];
@@ -36,7 +37,6 @@ NSArray *urlsArray = @[
                     } else {
                         [self->_recepiesArray addObjectsFromArray:recepiesMutableArray];
                     }
-                    
                     [self->_delegate onSuccess];
                 }
             }

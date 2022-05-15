@@ -48,8 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 // values can be contained by NSArray and NSDictionary.
 
 @implementation SMQuantityFraction
-+ (NSDictionary<NSString *, SMQuantityFraction *> *)values
-{
++ (NSDictionary<NSString *, SMQuantityFraction *> *)values {
     static NSDictionary<NSString *, SMQuantityFraction *> *values;
     return values = values ? values : @{
         @"": [[SMQuantityFraction alloc] initWithValue:@""],
@@ -60,23 +59,23 @@ NS_ASSUME_NONNULL_BEGIN
 + (SMQuantityFraction *)empty { return SMQuantityFraction.values[@""]; }
 + (SMQuantityFraction *)the12 { return SMQuantityFraction.values[@"1/2"]; }
 
-+ (instancetype _Nullable)withValue:(NSString *)value
-{
++ (instancetype _Nullable)withValue:(NSString *)value {
     return SMQuantityFraction.values[value];
 }
 
-- (instancetype)initWithValue:(NSString *)value
-{
+- (instancetype)initWithValue:(NSString *)value {
     if (self = [super init]) _value = value;
     return self;
 }
 
-- (NSUInteger)hash { return _value.hash; }
+- (NSUInteger)hash {
+    return _value.hash;
+}
+
 @end
 
 @implementation SMUnit
-+ (NSDictionary<NSString *, SMUnit *> *)values
-{
++ (NSDictionary<NSString *, SMUnit *> *)values {
     static NSDictionary<NSString *, SMUnit *> *values;
     return values = values ? values : @{
         @"": [[SMUnit alloc] initWithValue:@""],
@@ -85,22 +84,30 @@ NS_ASSUME_NONNULL_BEGIN
     };
 }
 
-+ (SMUnit *)empty { return SMUnit.values[@""]; }
-+ (SMUnit *)g { return SMUnit.values[@"g"]; }
-+ (SMUnit *)mg { return SMUnit.values[@"mg"]; }
++ (SMUnit *)empty {
+    return SMUnit.values[@""];
+}
 
-+ (instancetype _Nullable)withValue:(NSString *)value
-{
++ (SMUnit *)g {
+    return SMUnit.values[@"g"];
+}
++ (SMUnit *)mg {
+    return SMUnit.values[@"mg"];
+}
+
++ (instancetype _Nullable)withValue:(NSString *)value {
     return SMUnit.values[value];
 }
 
-- (instancetype)initWithValue:(NSString *)value
-{
+- (instancetype)initWithValue:(NSString *)value {
     if (self = [super init]) _value = value;
     return self;
 }
 
-- (NSUInteger)hash { return _value.hash; }
+- (NSUInteger)hash {
+    return _value.hash;
+}
+
 @end
 
 static id map(id collection, id (^f)(id value)) {
@@ -117,8 +124,7 @@ static id map(id collection, id (^f)(id value)) {
 
 #pragma mark - JSON serialization
 
-SMRecepies *_Nullable SMRecepiesFromData(NSData *data, NSError **error)
-{
+SMRecepies *_Nullable SMRecepiesFromData(NSData *data, NSError **error) {
     @try {
         id json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:error];
         return *error ? nil : [SMRecepies fromJSONDictionary:json];
@@ -128,13 +134,11 @@ SMRecepies *_Nullable SMRecepiesFromData(NSData *data, NSError **error)
     }
 }
 
-SMRecepies *_Nullable SMRecepiesFromJSON(NSString *json, NSStringEncoding encoding, NSError **error)
-{
+SMRecepies *_Nullable SMRecepiesFromJSON(NSString *json, NSStringEncoding encoding, NSError **error) {
     return SMRecepiesFromData([json dataUsingEncoding:encoding], error);
 }
 
-NSData *_Nullable SMRecepiesToData(SMRecepies *recepies, NSError **error)
-{
+NSData *_Nullable SMRecepiesToData(SMRecepies *recepies, NSError **error) {
     @try {
         id json = [recepies JSONDictionary];
         NSData *data = [NSJSONSerialization dataWithJSONObject:json options:kNilOptions error:error];
@@ -145,15 +149,13 @@ NSData *_Nullable SMRecepiesToData(SMRecepies *recepies, NSError **error)
     }
 }
 
-NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding encoding, NSError **error)
-{
+NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding encoding, NSError **error) {
     NSData *data = SMRecepiesToData(recepies, error);
     return data ? [[NSString alloc] initWithData:data encoding:encoding] : nil;
 }
 
 @implementation SMRecepies
-+ (NSDictionary<NSString *, NSString *> *)properties
-{
++ (NSDictionary<NSString *, NSString *> *)properties {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
         @"id": @"identifier",
@@ -169,23 +171,19 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     };
 }
 
-+ (_Nullable instancetype)fromData:(NSData *)data error:(NSError *_Nullable *)error
-{
++ (_Nullable instancetype)fromData:(NSData *)data error:(NSError *_Nullable *)error {
     return SMRecepiesFromData(data, error);
 }
 
-+ (_Nullable instancetype)fromJSON:(NSString *)json encoding:(NSStringEncoding)encoding error:(NSError *_Nullable *)error
-{
++ (_Nullable instancetype)fromJSON:(NSString *)json encoding:(NSStringEncoding)encoding error:(NSError *_Nullable *)error {
     return SMRecepiesFromJSON(json, encoding, error);
 }
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict
-{
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict {
     return dict ? [[SMRecepies alloc] initWithJSONDictionary:dict] : nil;
 }
 
-- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
         _main = [SMMain fromJSONDictionary:(id)_main];
@@ -195,20 +193,17 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     return self;
 }
 
-- (void)setValue:(nullable id)value forKey:(NSString *)key
-{
+- (void)setValue:(nullable id)value forKey:(NSString *)key {
     id resolved = SMRecepies.properties[key];
     if (resolved) [super setValue:value forKey:resolved];
 }
 
-- (void)setNilValueForKey:(NSString *)key
-{
+- (void)setNilValueForKey:(NSString *)key {
     id resolved = SMRecepies.properties[key];
     if (resolved) [super setValue:@(0) forKey:resolved];
 }
 
-- (NSDictionary *)JSONDictionary
-{
+- (NSDictionary *)JSONDictionary {
     id dict = [[self dictionaryWithValuesForKeys:SMRecepies.properties.allValues] mutableCopy];
 
     // Rewrite property names that differ in JSON
@@ -230,20 +225,17 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     return dict;
 }
 
-- (NSData *_Nullable)toData:(NSError *_Nullable *)error
-{
+- (NSData *_Nullable)toData:(NSError *_Nullable *)error {
     return SMRecepiesToData(self, error);
 }
 
-- (NSString *_Nullable)toJSON:(NSStringEncoding)encoding error:(NSError *_Nullable *)error
-{
+- (NSString *_Nullable)toJSON:(NSStringEncoding)encoding error:(NSError *_Nullable *)error {
     return SMRecepiesToJSON(self, encoding, error);
 }
 @end
 
 @implementation SMItem
-+ (NSDictionary<NSString *, NSString *> *)properties
-{
++ (NSDictionary<NSString *, NSString *> *)properties {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
         @"id": @"identifier",
@@ -269,13 +261,11 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     };
 }
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict
-{
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict {
     return dict ? [[SMItem alloc] initWithJSONDictionary:dict] : nil;
 }
 
-- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
         _quantityFraction = [SMQuantityFraction withValue:(id)_quantityFraction];
@@ -284,20 +274,17 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     return self;
 }
 
-- (void)setValue:(nullable id)value forKey:(NSString *)key
-{
+- (void)setValue:(nullable id)value forKey:(NSString *)key {
     id resolved = SMItem.properties[key];
     if (resolved) [super setValue:value forKey:resolved];
 }
 
-- (void)setNilValueForKey:(NSString *)key
-{
+- (void)setNilValueForKey:(NSString *)key {
     id resolved = SMItem.properties[key];
     if (resolved) [super setValue:@(0) forKey:resolved];
 }
 
-- (NSDictionary *)JSONDictionary
-{
+- (NSDictionary *)JSONDictionary {
     id dict = [[self dictionaryWithValuesForKeys:SMItem.properties.allValues] mutableCopy];
 
     // Rewrite property names that differ in JSON
@@ -321,8 +308,7 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
 @end
 
 @implementation SMSubItem
-+ (NSDictionary<NSString *, NSString *> *)properties
-{
++ (NSDictionary<NSString *, NSString *> *)properties {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
         @"id": @"identifier",
@@ -343,13 +329,11 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     };
 }
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict
-{
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict {
     return dict ? [[SMSubItem alloc] initWithJSONDictionary:dict] : nil;
 }
 
-- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
         _quantityFraction = [SMQuantityFraction withValue:(id)_quantityFraction];
@@ -357,20 +341,17 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     return self;
 }
 
-- (void)setValue:(nullable id)value forKey:(NSString *)key
-{
+- (void)setValue:(nullable id)value forKey:(NSString *)key {
     id resolved = SMSubItem.properties[key];
     if (resolved) [super setValue:value forKey:resolved];
 }
 
-- (void)setNilValueForKey:(NSString *)key
-{
+- (void)setNilValueForKey:(NSString *)key {
     id resolved = SMSubItem.properties[key];
     if (resolved) [super setValue:@(0) forKey:resolved];
 }
 
-- (NSDictionary *)JSONDictionary
-{
+- (NSDictionary *)JSONDictionary {
     id dict = [[self dictionaryWithValuesForKeys:SMSubItem.properties.allValues] mutableCopy];
 
     // Rewrite property names that differ in JSON
@@ -390,11 +371,11 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
 
     return dict;
 }
+
 @end
 
 @implementation SMMain
-+ (NSDictionary<NSString *, NSString *> *)properties
-{
++ (NSDictionary<NSString *, NSString *> *)properties {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
         @"title": @"title",
@@ -419,13 +400,11 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     };
 }
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict
-{
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict {
     return dict ? [[SMMain alloc] initWithJSONDictionary:dict] : nil;
 }
 
-- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
         _nutritionalInformation = map(_nutritionalInformation, λ(id x, [SMNutritionalInformation fromJSONDictionary:x]));
@@ -433,20 +412,17 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     return self;
 }
 
-- (void)setValue:(nullable id)value forKey:(NSString *)key
-{
+- (void)setValue:(nullable id)value forKey:(NSString *)key {
     id resolved = SMMain.properties[key];
     if (resolved) [super setValue:value forKey:resolved];
 }
 
-- (void)setNilValueForKey:(NSString *)key
-{
+- (void)setNilValueForKey:(NSString *)key {
     id resolved = SMMain.properties[key];
     if (resolved) [super setValue:@(0) forKey:resolved];
 }
 
-- (NSDictionary *)JSONDictionary
-{
+- (NSDictionary *)JSONDictionary {
     id dict = [[self dictionaryWithValuesForKeys:SMMain.properties.allValues] mutableCopy];
 
     // Rewrite property names that differ in JSON
@@ -469,8 +445,7 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
 @end
 
 @implementation SMNutritionalInformation
-+ (NSDictionary<NSString *, NSString *> *)properties
-{
++ (NSDictionary<NSString *, NSString *> *)properties {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
         @"name": @"name",
@@ -483,13 +458,11 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     };
 }
 
-+ (instancetype)fromJSONDictionary:(NSDictionary *)dict
-{
++ (instancetype)fromJSONDictionary:(NSDictionary *)dict {
     return dict ? [[SMNutritionalInformation alloc] initWithJSONDictionary:dict] : nil;
 }
 
-- (instancetype)initWithJSONDictionary:(NSDictionary *)dict
-{
+- (instancetype)initWithJSONDictionary:(NSDictionary *)dict {
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dict];
         _unit = [SMUnit withValue:(id)_unit];
@@ -497,20 +470,17 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
     return self;
 }
 
-- (void)setValue:(nullable id)value forKey:(NSString *)key
-{
+- (void)setValue:(nullable id)value forKey:(NSString *)key {
     id resolved = SMNutritionalInformation.properties[key];
     if (resolved) [super setValue:value forKey:resolved];
 }
 
-- (void)setNilValueForKey:(NSString *)key
-{
+- (void)setNilValueForKey:(NSString *)key {
     id resolved = SMNutritionalInformation.properties[key];
     if (resolved) [super setValue:@(0) forKey:resolved];
 }
 
-- (NSDictionary *)JSONDictionary
-{
+- (NSDictionary *)JSONDictionary {
     id dict = [[self dictionaryWithValuesForKeys:SMNutritionalInformation.properties.allValues] mutableCopy];
 
     // Rewrite property names that differ in JSON
@@ -531,6 +501,7 @@ NSString *_Nullable SMRecepiesToJSON(SMRecepies *recepies, NSStringEncoding enco
 
     return dict;
 }
+
 @end
 
 NS_ASSUME_NONNULL_END
