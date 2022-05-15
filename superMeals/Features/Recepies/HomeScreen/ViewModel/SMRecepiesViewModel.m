@@ -37,7 +37,6 @@ NSArray *urlsArray = @[
                     } else {
                         [self->_recepiesArray addObjectsFromArray:recepiesMutableArray];
                     }
-                    [self saveForOffileUse:data];
                     [self->_delegate onSuccess];
                 }
             }
@@ -60,30 +59,6 @@ NSArray *urlsArray = @[
 
 - (NSInteger)getTotalRecepies {
     return [_recepiesArray count];
-}
-
-- (void)saveForOffileUse:(NSData *)data {
-//    NSError *jsonSerializationError;
-//    BOOL isValid = [NSJSONSerialization isValidJSONObject:recepie];
-//    NSLog(@"%@", isValid);
-    
-//    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:recepie
-//                                                       options:kNilOptions
-//                                                         error:&jsonSerializationError];
-    
-//    NSError *archiveError;
-//    NSData *dataArchive= [NSKeyedArchiver archivedDataWithRootObject:data requiringSecureCoding:NO error:&archiveError];
-    
-    NSString *path = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"DataFile.txt"];
-//    [dataArchive writeToFile:path atomically:YES];
-    
-    NSError *writeError;
-    NSFileHandle *fileHandler = [NSFileHandle fileHandleForWritingAtPath:path];
-    [fileHandler writeData:data error:&writeError];
-    
-    if (writeError) {
-        NSLog(@"%@", writeError);
-    }
 }
 
 @end
